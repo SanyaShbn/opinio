@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Box, HStack, Icon, Pressable, Text } from 'native-base';
-import { Ionicons } from '@expo/vector-icons';
-import { background } from '../../../settings/constants/Colors';
+import { MaterialIcons } from '@expo/vector-icons';
+import { background } from '../../../../settings/constants/Colors';
 
-const HeaderTopPreviousPage = () => {
+const HeaderTopClose = () => {
   const [pressedIcon, setPressedIcon] = useState<string | null>(null);
 
   const handlePressIn = (iconName: string) => {
@@ -28,13 +28,12 @@ const HeaderTopPreviousPage = () => {
       justifyContent="center"
       safeAreaTop
     >
-      <HStack alignItems="center" justifyContent="center" px={4}>
+      <HStack alignItems="center" justifyContent="space-between" px={4} width="100%">
         <Pressable
-          onPressIn={() => handlePressIn('back')}
+          onPressIn={() => handlePressIn('close')}
           onPressOut={handlePressOut}
-          mr={6}
         >
-          <Icon as={Ionicons} name="arrow-back" color={iconColor('back')} size="xl" />
+          <Icon as={MaterialIcons} name="close" color={iconColor('close')} size="xl" />
         </Pressable>
         <Text style={{
           fontFamily: 'Roboto',
@@ -43,12 +42,15 @@ const HeaderTopPreviousPage = () => {
           lineHeight: 24,
           textAlign: 'center',
           color: 'white',
+          position: 'absolute',
+          left: '45%',
         }}>
-          Opinio: Название страницы
+          Opinio
         </Text>
+        <Box width="24px" />
       </HStack>
     </Box>
   );
 };
 
-export default HeaderTopPreviousPage;
+export default HeaderTopClose;

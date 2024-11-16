@@ -1,6 +1,7 @@
-import { tabsStylesSecondVariant } from '@/app/settings/constants/TabStyle';
+
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
+import { tabsStylesSecondVariant } from '../../settings/constants/TabStyle';
 
 
 interface MenuItemProps {

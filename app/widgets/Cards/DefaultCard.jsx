@@ -1,8 +1,9 @@
 import React from 'react';
 import { Box, HStack, VStack, Text, Pressable } from 'native-base';
+import { buttonColor } from '../../settings/constants/Colors';
 
-import { StyledCardsText, StyledCardsTopic } from '@/app/settings/constants/TextConstants';
-import { buttonColor } from '@/app/settings/constants/Colors';
+
+
 
 const DefaultCard = () => {
     return (
@@ -10,9 +11,9 @@ const DefaultCard = () => {
           <HStack justifyContent="space-between" height="100%">
             <VStack justifyContent="space-between" flex={1}>
               <VStack>
-                <StyledCardsTopic>
+                <StyledCardsText>
                     Медицина
-                </StyledCardsTopic>
+                </StyledCardsText>
                 <StyledCardsText>
                     Название организации
                 </StyledCardsText>

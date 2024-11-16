@@ -1,15 +1,12 @@
 import React, { ReactNode } from 'react';
 import { Text, StyleSheet, TextStyle } from 'react-native';
 
-interface StyledTextProps {
-  children: ReactNode;
-}
 
 const baseTextStyle = StyleSheet.create({
   text: {
     fontFamily: 'Roboto',
     fontWeight: '500'
-  } as TextStyle,
+  } ,
 });
 
 const headerTextStyle = StyleSheet.create({
@@ -18,7 +15,7 @@ const headerTextStyle = StyleSheet.create({
     fontSize: 14,
     textAlign: 'center',
     color: 'white',
-  } as TextStyle,
+  } ,
 });
 
 const cardsTextStyle = StyleSheet.create({
@@ -28,7 +25,7 @@ const cardsTextStyle = StyleSheet.create({
     lineHeight: 21,
     textAlign: 'left',
     color: 'black',
-  } as TextStyle,
+  } ,
 });
 
 const cardsTopicStyle = StyleSheet.create({
@@ -37,17 +34,17 @@ const cardsTopicStyle = StyleSheet.create({
     fontSize: 12,
     textAlign: 'left',
     color: '#232690',
-  } as TextStyle,
+  } ,
 });
 
-export const StyledHeaderText: React.FC<StyledTextProps> = ({ children }) => {
+export const StyledHeaderText = ({ children }) => {
   return <Text style={headerTextStyle.text}>{children}</Text>;
 };
 
-export const StyledCardsText: React.FC<StyledTextProps> = ({ children }) => {
+export const StyledCardsText = ({ children }) => {
   return <Text style={cardsTextStyle.text}>{children}</Text>;
 };
 
-export const StyledCardsTopic: React.FC<StyledTextProps> = ({ children }) => {
+export const StyledCardsTopic = ({ children }) => {
   return <Text style={cardsTopicStyle.text}>{children}</Text>;
 };

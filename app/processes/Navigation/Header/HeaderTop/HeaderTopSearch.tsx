@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, HStack, Icon, Pressable, Text } from 'native-base';
 import { Ionicons } from '@expo/vector-icons';
-import { background } from '../../../settings/constants/Colors'; // Adjust the path as necessary
+import { background } from '../../../../settings/constants/Colors'; // Adjust the path as necessary
 
 const HeaderTopSearch = () => {
   const [pressedIcon, setPressedIcon] = useState<string | null>(null);

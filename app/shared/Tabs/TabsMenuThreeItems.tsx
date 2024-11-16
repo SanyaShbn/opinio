@@ -1,6 +1,7 @@
-import { tabsStyles } from '@/app/settings/constants/TabStyle';
+
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
+import { tabsStyles } from '../../settings/constants/TabStyle';
 
 interface MenuItemProps {
   label: string;
