@@ -1,7 +1,8 @@
 import React from 'react';
 import { Box, HStack, VStack, Text, Pressable } from 'native-base';
-import { StyledCardsText, StyledCardsTopic } from '../../constants/TextConstants';
-import { buttonColor } from '../../constants/Colors'; 
+
+import { StyledCardsText, StyledCardsTopic } from '@/app/settings/constants/TextConstants';
+import { buttonColor } from '@/app/settings/constants/Colors';
 
 const DefaultCard = () => {
     return (
