@@ -1,15 +1,15 @@
-import { Text, View } from "react-native";
+import { Center, NativeBaseProvider } from "native-base";
+// import TabsMenuThreeItemsPurpleVariant from "./components/Tabs/TabsMenuThreeItemsPurpleVariant";
+import DefaultCard from './widgets/Cards/DefaultCard';
+
+
 
 export default function Index() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-    </View>
+    <NativeBaseProvider> 
+      <Center flex={1}>
+        <DefaultCard/>
+      </Center>
+    </NativeBaseProvider>
   );
 }
