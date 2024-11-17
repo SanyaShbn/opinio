@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Box, HStack, Icon, Pressable, Text } from 'native-base';
 import { Ionicons } from '@expo/vector-icons';
 import { background } from '../../../../settings/constants/Colors';
+import { Stack } from 'expo-router';
 
-const HeaderTopPreviousPage = () => {
+const HeaderTopPreviousPage = ({name, title}) => {
   const [pressedIcon, setPressedIcon] = useState<string | null>(null);
 
   const handlePressIn = (iconName: string) => {
@@ -17,37 +18,40 @@ const HeaderTopPreviousPage = () => {
   const iconColor = (iconName: string) =>
     pressedIcon === iconName ? 'lightgrey' : 'white';
 
+
+
+
   return (
-    <Box
-      position="absolute"
-      top={0}
-      width="100%"
-      height="70px"
-      bg={background}
-      pb="10px"
-      justifyContent="center"
-      safeAreaTop
-    >
-      <HStack alignItems="center" justifyContent="center" px={4}>
-        <Pressable
-          onPressIn={() => handlePressIn('back')}
-          onPressOut={handlePressOut}
-          mr={6}
-        >
-          <Icon as={Ionicons} name="arrow-back" color={iconColor('back')} size="xl" />
-        </Pressable>
-        <Text style={{
-          fontFamily: 'Roboto',
-          fontSize: 24,
-          fontWeight: '500',
-          lineHeight: 24,
-          textAlign: 'center',
-          color: 'white',
-        }}>
-          Opinio: Название страницы
-        </Text>
-      </HStack>
-    </Box>
+
+
+
+      
+        <Stack.Screen
+          name={name}
+          options={{
+            headerLeft: () =>  <Pressable
+            onPressIn={() => handlePressIn('back')}
+            onPressOut={handlePressOut}
+            mr={6}
+          >
+            <Icon as={Ionicons} name="arrow-back" color={iconColor('back')} size="xl" />
+          </Pressable>,
+            headerTitle: () =>  <Text style={{
+              fontFamily: 'Roboto',
+              fontSize: 24,
+              fontWeight: '500',
+              lineHeight: 24,
+              textAlign: 'center',
+              color: 'white',
+            }}>
+              Opinio: {title}
+            </Text>,
+     
+          }}
+        />
+
+
+    
   );
 };
 

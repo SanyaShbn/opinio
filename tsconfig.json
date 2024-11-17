@@ -6,5 +6,5 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-, "app/settings/constants/TextConstants.jsx" , "index.jsx" ]
+, "app/settings/constants/TextConstants.jsx" , "App.jsx" ]
 }
