@@ -11,6 +11,8 @@ const ButtonPrimary = ({ text, type = "default"}) => {
         return isPressed ? [variant3Styles.button, variant3Styles.pressed] : [variant3Styles.button];
       case "pollsCardVariant" && "bonusPostVariant":
         return isPressed ? [pollsCardVariant.button, pollsCardVariant.pressed] : [pollsCardVariant.button];
+      case "closePollModalVariant":
+        return isPressed ? [closePollModalVariant.button, closePollModalVariant.pressed] : [closePollModalVariant.button];
       default:
         return isPressed ? [defaultStyles.button, defaultStyles.pressed] : [defaultStyles.button];
     }
@@ -22,6 +24,8 @@ const ButtonPrimary = ({ text, type = "default"}) => {
         return variant3Styles.text;
       case "pollsCardVariant" && "bonusPostVariant":
         return pollsCardVariant.text;
+      case "closePollModalVariant":
+        return closePollModalVariant.text;
       default:
         return defaultStyles.text;
     }
@@ -95,6 +99,23 @@ const pollsCardVariant = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 4,
+  },
+});
+
+const closePollModalVariant = StyleSheet.create({
+  ...defaultStyles,
+  button: {
+    backgroundColor: primaryButtonColor,
+    width: 66,
+    height: 37,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 4,
+  },
+  text: {
+    fontFamily: "Roboto",
+    fontSize: 14,
+    color: "white",
   },
 });
 

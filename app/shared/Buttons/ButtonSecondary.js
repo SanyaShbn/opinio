@@ -9,6 +9,8 @@ const ButtonSecondary = ({ text, type = "default" }) => {
     switch (type) {
       case "bonusPostVariant":
         return isPressed ? [variant2Styles.button, variant2Styles.pressed] : [variant2Styles.button];
+      case "closePollModalVariant":
+        return isPressed ? [closePollModalVariant.button, closePollModalVariant.pressed] : [closePollModalVariant.button];
       default:
         return isPressed ? [defaultStyles.button, defaultStyles.pressed] : [defaultStyles.button];
     }
@@ -18,6 +20,8 @@ const ButtonSecondary = ({ text, type = "default" }) => {
     switch (type) {
       case "bonusPostVariant":
         return variant2Styles.text;
+      case "closePollModalVariant":
+        return closePollModalVariant.text;  
       default:
         return defaultStyles.text;
     }
@@ -65,7 +69,7 @@ const defaultStyles = StyleSheet.create({
   }
 });
 
-  const variant2Styles = StyleSheet.create({
+const variant2Styles = StyleSheet.create({
     ...defaultStyles,
     button: {
       backgroundColor: secondaryButtonColor,
@@ -80,6 +84,23 @@ const defaultStyles = StyleSheet.create({
       fontSize: 16,
       color: "white",
     },
+});
+
+const closePollModalVariant = StyleSheet.create({
+  ...defaultStyles,
+  button: {
+    backgroundColor: secondaryButtonColor,
+    width: 49,
+    height: 37,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 4,
+  },
+  text: {
+    fontFamily: "Roboto",
+    fontSize: 14,
+    color: "white",
+  },
 });
 
 export default ButtonSecondary;

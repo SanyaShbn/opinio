@@ -6,7 +6,10 @@ import React from "react";
 // import Post from "./widgets/Posts/Post"
 // import PollsCard from "./widgets/Cards/PollsCard"
 // import BonusPost from "./widgets/Posts/BonusPost"
-
+// import FilterBar from "./shared/FilterBar/FilterBar"
+// import QuestionAnswer from "./features/QuestionAnswer/QuestionAnswer"
+// import ClosePollModal from "./modals/ClosePollModal"
+import BonusModal from "./modals/BonusModal"
 
 export default function Index() {
   return (
@@ -28,12 +31,18 @@ Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torqu
 Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas et, augue.
 "
 
-         comments={10} onReadMore={() => console.log("Read more clicked")} type="variant2"/> */}
+         comments={10} type="variant2"/> */}
 
          {/* <PollsCard type="variant3" orgName="Название организации" topic="Медицина"
           text="Заголовок опроса" date="28.10.2024" votesNumb={100} questionsNumb={10}/> */}
 
           {/* <BonusPost bonusName="Название награды"/> */}
+
+          {/* <QuestionAnswer/> */}
+
+          {/* <ClosePollModal messageText="Вы уверены, что хотите прекратить прохождение опроса?"/> */}
+
+          <BonusModal/>
       </Center>
     </NativeBaseProvider>
   );
