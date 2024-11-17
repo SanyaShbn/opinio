@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { Text, Pressable, StyleSheet } from "react-native";
 import { primaryButtonColor } from "@/app/settings/constants/Colors";
 
-const ButtonPrimary = ({ text, type }) => {
+const ButtonPrimary = ({ text, type = "default"}) => {
   const [isPressed, setIsPressed] = useState(false);
 
   const getType = (type, isPressed) => {
     switch (type) {
       case "variant3":
         return isPressed ? [variant3Styles.button, variant3Styles.pressed] : [variant3Styles.button];
-      case "pollsCardVariant":
+      case "pollsCardVariant" && "bonusPostVariant":
         return isPressed ? [pollsCardVariant.button, pollsCardVariant.pressed] : [pollsCardVariant.button];
       default:
         return isPressed ? [defaultStyles.button, defaultStyles.pressed] : [defaultStyles.button];
@@ -20,7 +20,7 @@ const ButtonPrimary = ({ text, type }) => {
     switch (type) {
       case "variant3":
         return variant3Styles.text;
-      case "pollsCardVariant":
+      case "pollsCardVariant" && "bonusPostVariant":
         return pollsCardVariant.text;
       default:
         return defaultStyles.text;
@@ -63,6 +63,7 @@ const defaultStyles = StyleSheet.create({
     shadowOpacity: 1,
   },
   text: {
+    fontFamily: "Roboto",
     fontSize: 16,
     color: "white",
   },
@@ -79,6 +80,7 @@ const variant3Styles = StyleSheet.create({
     borderRadius: 4,
   },
   text: {
+    fontFamily: "Roboto",
     fontSize: 10,
     color: "white",
   },

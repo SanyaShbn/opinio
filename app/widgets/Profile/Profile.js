@@ -1,9 +1,17 @@
-import React from "react";
-import { Box, HStack, VStack, Text, Image } from "native-base";
+import React, {useEffect, useState} from "react";
+import { Box, HStack, VStack, Text, Image, Skeleton } from "native-base";
 import ButtonSecondary from "../../shared/Buttons/ButtonSecondary";
 import { profileComponentTextStyles } from "@/app/settings/constants/TextConstants";
 
-const Profile = ({ title, logo, discussions, surveys, followers, description, buttonText }) => {
+const Profile = ({ title, logo = require('../../settings/images/organization-logo-icon.png'), discussions, surveys, followers, description, buttonText }) => {
+  
+  const [isLoaded, setIsLoaded] = useState(false);
+  
+  useEffect(() => { 
+    if (logo) { 
+      setIsLoaded(true);
+  } }, [logo]);
+
   return (
     <Box
       width="402px"
@@ -19,13 +27,14 @@ const Profile = ({ title, logo, discussions, surveys, followers, description, bu
           {title}
         </Text>
         <HStack space="10px" alignItems="center">
+        {!isLoaded ? <Skeleton size="50" rounded="full" /> :
           <Image
             source={logo}
             alt="Organization Logo"
             width="50px"
             height="50px"
             opacity="1"
-          />
+          />}
           <HStack space="10px" alignItems="flex-start">
             <VStack alignItems="center">
               <Text style={profileComponentTextStyles.content}>

@@ -2,8 +2,26 @@ import React, { useState } from "react";
 import { Text, Pressable, StyleSheet } from "react-native";
 import { secondaryButtonColor } from "@/app/settings/constants/Colors";
 
-const ButtonSecondary = ({ text }) => {
+const ButtonSecondary = ({ text, type = "default" }) => {
   const [isPressed, setIsPressed] = useState(false);
+
+  const getType = (type, isPressed) => {
+    switch (type) {
+      case "bonusPostVariant":
+        return isPressed ? [variant2Styles.button, variant2Styles.pressed] : [variant2Styles.button];
+      default:
+        return isPressed ? [defaultStyles.button, defaultStyles.pressed] : [defaultStyles.button];
+    }
+  };
+
+  const getTextStyle = (type) => {
+    switch (type) {
+      case "bonusPostVariant":
+        return variant2Styles.text;
+      default:
+        return defaultStyles.text;
+    }
+  };
 
   const handlePressIn = () => {
     setIsPressed(true);
@@ -17,9 +35,9 @@ const ButtonSecondary = ({ text }) => {
     <Pressable
       onPressIn={handlePressIn}
       onPressOut={handlePressOut}
-      style={[defaultStyles.button, isPressed && defaultStyles.pressed]}
+      style={getType(type, isPressed)}
     >
-      <Text style={defaultStyles.text}>{text}</Text>
+      <Text style={getTextStyle(type)}>{text}</Text>
     </Pressable>
   );
 };
@@ -41,9 +59,27 @@ const defaultStyles = StyleSheet.create({
     shadowOpacity: 1,
   },
   text: {
+    fontFamily: "Roboto",
     fontSize: 10,
     color: "white",
-  },
+  }
+});
+
+  const variant2Styles = StyleSheet.create({
+    ...defaultStyles,
+    button: {
+      backgroundColor: secondaryButtonColor,
+      width: 90,
+      height: 30,
+      justifyContent: "center",
+      alignItems: "center",
+      borderRadius: 4,
+    },
+    text: {
+      fontFamily: "Roboto",
+      fontSize: 16,
+      color: "white",
+    },
 });
 
 export default ButtonSecondary;

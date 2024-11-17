@@ -1,11 +1,25 @@
-import React from "react";
-import { Box, HStack, VStack, Image, Text } from "native-base";
+import React, {useEffect, useState} from "react";
+import { Box, HStack, VStack, Image, Text, Skeleton } from "native-base";
 import { StyledCardsText, StyledCardsTopic, StyledCardsDate } from "@/app/settings/constants/TextConstants";
 import ButtonPrimary from "@/app/shared/Buttons/ButtonPrimary";
 import { styles } from "@/app/settings/constants/PollsCardStylesConstants";
 import Bonus from "../../shared/Bonus/Bonus";
+import { FullWindowOverlay } from "react-native-screens";
 
-const PollsCard = ({ logo, type, topic, text, date, votesNumb, questionsNumb, orgName }) => {
+const PollsCard = ({ logo = require('../../settings/images/organization-logo-icon.png'), type = "default", topic, text, date,
+   votesNumb, questionsNumb = 10, orgName }) => {
+
+  const [isSourceLoaded, setIsSourceLoaded] = useState(false)
+  const [isLogoLoaded, setIsLogoLoaded] = useState(false)
+  const source = require('../../settings/images/polls-card-header.png')
+
+  useEffect(() => { 
+    if (logo) { 
+      setIsLogoLoaded(true);
+    }
+    if(source){
+      setIsSourceLoaded(true);
+    }}, [logo, source]);  
 
   const getWidth = () => {
     switch (type) {
@@ -19,17 +33,18 @@ const PollsCard = ({ logo, type, topic, text, date, votesNumb, questionsNumb, or
   };
 
   return (
-    <Box {...styles.box} style={{ boxShadow: "0px 2px 10px 0px #00000040" }} height={type === "variant2" ? "114px" : "178px"} 
+    <Box {...styles.box} height={type === "variant2" ? "114px" : "178px"} 
     width={getWidth()}>
       {type === "default" && 
       <Box {...styles.imageHeaderBox}>
+        {!isSourceLoaded ? <Skeleton width="196px" height="64px" /> : 
         <Image
-          source={require('../../settings/images/polls-card-header.png')}
+          source={source}
           alt="Polls Card Header"
           width="196px"
           height="64px"
           resizeMode="contain"
-        />
+        />}
       </Box>}
 
       {type === "variant3" && 
@@ -37,13 +52,14 @@ const PollsCard = ({ logo, type, topic, text, date, votesNumb, questionsNumb, or
         <HStack width="100%">
           <Box flex={1} justifyContent="center" alignItems="center" borderRightWidth="1px" borderRightColor="#d3d3d3">
             <HStack alignItems="center" pl={2} width="100%">
+            {!isLogoLoaded ? <Skeleton size="50" rounded="full"/> : 
               <Image
                 source={logo}
                 alt="Organization Logo"
                 width="50px"
                 height="50px"
                 resizeMode="contain"
-              />
+              />}
               <Box flex={1} ml={2}>
                 <Text {...styles.text} numberOfLines={1} ellipsizeMode="tail" style={{ flexShrink: 1 }}>
                   {orgName}
@@ -52,12 +68,13 @@ const PollsCard = ({ logo, type, topic, text, date, votesNumb, questionsNumb, or
             </HStack>
           </Box>
           <Box flex={1} justifyContent="center" alignItems="center">
+          {!isSourceLoaded ? <Skeleton size="100%" /> : 
             <Image
-              source={require('../../settings/images/polls-card-header.png')}
+              source={source}
               alt="Polls Card Header"
               width="100%"
               height="100%"
-            />
+            />}
           </Box>
         </HStack>
       </Box>}

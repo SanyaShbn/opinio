@@ -5,6 +5,7 @@ export const styles = {
       width: "190px",
       height: "178px",
       maxWidth: "100%",
+      boxShadow: "0px 2px 10px 0px #00000040",
       shadow: 8,
       elevation: 5,
       overflow: "hidden"

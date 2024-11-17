@@ -1,3 +1,5 @@
+import { secondaryButtonColor } from "./Colors";
+
 export const styles = {
     box: {
       bg: "white",
@@ -5,6 +7,7 @@ export const styles = {
       width: "340px",
       height: "114px",
       maxWidth: "100%",
+      boxShadow: "0px 2px 10px 0px #00000040",
       shadow: 8,
       elevation: 5,
       overflow: "hidden",
@@ -69,15 +72,10 @@ export const styles = {
       textAlign: "left",
       color: "gray.500"
     },
-    image: {
-      width: "20px",
-      height: "20px",
-      tintColor: "gray.500",
-      marginLeft: "5px"
-    },
     deleteIcon: {
       width: "16px",
-      height: "19.2px"
+      height: "19.2px",
+      color: secondaryButtonColor,
     }
   };
   
