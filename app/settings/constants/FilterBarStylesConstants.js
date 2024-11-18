@@ -4,7 +4,6 @@ export const styles = {
   container: {
     width: "402px",
     height: "43px",
-    padding: "11px 26px",
     gap: "20px",
   },
   innerContainer: {

@@ -3,7 +3,7 @@ import { Box, Text, Pressable } from "native-base";
 import { MaterialIcons } from "@expo/vector-icons";
 import { styles } from "../../settings/constants/QuestionAnswerStylesConstants";
 
-const QuestionAnswer = () => {
+const QuestionAnswer = ({answerVariant="Вариант ответа"}) => {
   const [selected, setSelected] = useState(false);
 
   const handlePress = () => {
@@ -20,7 +20,7 @@ const QuestionAnswer = () => {
     >
       <Box style={styles.textContainer}>
         <Text style={[styles.text, selected && styles.textSelected]}>
-          Вариант ответа
+          {answerVariant}
         </Text>
       </Box>
      

@@ -5,7 +5,9 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { styles } from "../../settings/constants/PostStylesConstants";
 import { primaryButtonColor, defaultGrey } from "../../settings/constants/Colors";
 
-const Post = ({ logo = require("../../settings/images/organization-logo-icon.png"), title, subtitle, content, comments, type = "default" }) => {
+const Post = ({ logo = require("../../settings/images/organization-logo-icon.png"), title="Название организации", subtitle="10 дней назад",
+  content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book", 
+  comments=10, type = "default" }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [variant, setVariant] = useState(type);
 
@@ -41,7 +43,7 @@ const Post = ({ logo = require("../../settings/images/organization-logo-icon.png
           {type === "variant2" && (
             <Box flexDirection="row" justifyContent="flex-end" flex={1}>
               <Pressable>
-                <MaterialIcons name="delete" size={24} color="black" {...styles.deleteIcon} />
+                <MaterialIcons name="delete" size={24} {...styles.deleteIcon} />
               </Pressable>
             </Box>
           )}

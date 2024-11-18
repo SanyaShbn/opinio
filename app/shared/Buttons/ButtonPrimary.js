@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Text, Pressable, StyleSheet } from "react-native";
-import { primaryButtonColor } from "../../settings/constants/Colors";
+import { secondaryColor } from "../../settings/constants/Colors";
 
 
 const ButtonPrimary = ({ text, type = "default"}) => {
@@ -14,6 +14,8 @@ const ButtonPrimary = ({ text, type = "default"}) => {
         return isPressed ? [pollsCardVariant.button, pollsCardVariant.pressed] : [pollsCardVariant.button];
       case "closePollModalVariant":
         return isPressed ? [closePollModalVariant.button, closePollModalVariant.pressed] : [closePollModalVariant.button];
+      case "pollsCreationSettingsVariant":
+        return isPressed ? [pollsCreationSettingsVariant.button, pollsCreationSettingsVariant.pressed] : [pollsCreationSettingsVariant.button];
       default:
         return isPressed ? [defaultStyles.button, defaultStyles.pressed] : [defaultStyles.button];
     }
@@ -27,6 +29,8 @@ const ButtonPrimary = ({ text, type = "default"}) => {
         return pollsCardVariant.text;
       case "closePollModalVariant":
         return closePollModalVariant.text;
+      case "pollsCreationSettingsVariant":
+        return pollsCreationSettingsVariant.text;
       default:
         return defaultStyles.text;
     }
@@ -53,7 +57,7 @@ const ButtonPrimary = ({ text, type = "default"}) => {
 
 const defaultStyles = StyleSheet.create({
   button: {
-    backgroundColor: primaryButtonColor,
+    backgroundColor: secondaryColor,
     width: 74,
     height: 28,
     justifyContent: "center",
@@ -61,7 +65,7 @@ const defaultStyles = StyleSheet.create({
     borderRadius: 4,
   },
   pressed: {
-    backgroundColor: primaryButtonColor,
+    backgroundColor: secondaryColor,
     shadowColor: "#00000040",
     shadowOffset: { width: 0, height: 4 },
     shadowRadius: 6,
@@ -77,7 +81,7 @@ const defaultStyles = StyleSheet.create({
 const variant3Styles = StyleSheet.create({
   ...defaultStyles,
   button: {
-    backgroundColor: primaryButtonColor,
+    backgroundColor: secondaryColor,
     width: 53,
     height: 31,
     justifyContent: "center",
@@ -94,7 +98,7 @@ const variant3Styles = StyleSheet.create({
 const pollsCardVariant = StyleSheet.create({
   ...defaultStyles,
   button: {
-    backgroundColor: primaryButtonColor,
+    backgroundColor: secondaryColor,
     width: 90,
     height: 30,
     justifyContent: "center",
@@ -106,7 +110,7 @@ const pollsCardVariant = StyleSheet.create({
 const closePollModalVariant = StyleSheet.create({
   ...defaultStyles,
   button: {
-    backgroundColor: primaryButtonColor,
+    backgroundColor: secondaryColor,
     width: 66,
     height: 37,
     justifyContent: "center",
@@ -116,6 +120,23 @@ const closePollModalVariant = StyleSheet.create({
   text: {
     fontFamily: "Roboto",
     fontSize: 14,
+    color: "white",
+  },
+});
+
+const pollsCreationSettingsVariant = StyleSheet.create({
+  ...defaultStyles,
+  button: {
+    backgroundColor: secondaryColor,
+    width: 114,
+    height: 40,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 4,
+  },
+  text: {
+    fontFamily: "Roboto",
+    fontSize: 16,
     color: "white",
   },
 });

@@ -5,7 +5,6 @@ export const tabsStyles = StyleSheet.create({
     container: {
       flexDirection: 'row',
       justifyContent: 'space-around',
-      marginTop: 50,
     },
     menuItem: {
       alignItems: 'center',

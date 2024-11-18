@@ -1,17 +1,15 @@
 import React from "react";
 import { Text, StyleSheet } from "react-native";
-import { Box } from "native-base";
+import { Box, Pressable } from "native-base";
 import { secondaryButtonColor } from './../../settings/constants/Colors';
 
-
-
-const Bonus = () => {
+const Bonus = ({ onPress }) => {
   return (
-    <Box
-      style={defaultStyles.box}
-    >
-      <Text style={defaultStyles.text}>Бонус</Text>
-    </Box>
+    <Pressable onPress={onPress}>
+      <Box style={defaultStyles.box}>
+        <Text style={defaultStyles.text}>Бонус</Text>
+      </Box>
+    </Pressable>
   );
 };
 
