@@ -9,7 +9,8 @@ import React from "react";
 // import FilterBar from "./shared/FilterBar/FilterBar"
 // import QuestionAnswer from "./features/QuestionAnswer/QuestionAnswer"
 // import ClosePollModal from "./modals/ClosePollModal"
-import BonusModal from "./modals/BonusModal"
+// import BonusModal from "./modals/BonusModal";
+import UserProfile from "./widgets/Profile/UserProfile";
 
 export default function Index() {
   return (
@@ -42,7 +43,10 @@ Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor,
 
           {/* <ClosePollModal messageText="Вы уверены, что хотите прекратить прохождение опроса?"/> */}
 
-          <BonusModal/>
+          {/* <BonusModal/> */}
+
+          <UserProfile userName="Евгений" type="variant2"/>
+
       </Center>
     </NativeBaseProvider>
   );

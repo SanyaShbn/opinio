@@ -11,6 +11,8 @@ const ButtonSecondary = ({ text, type = "default" }) => {
         return isPressed ? [variant2Styles.button, variant2Styles.pressed] : [variant2Styles.button];
       case "closePollModalVariant":
         return isPressed ? [closePollModalVariant.button, closePollModalVariant.pressed] : [closePollModalVariant.button];
+      case "userProfileModalVariant":
+        return isPressed ? [userProfileModalVariant.button, userProfileModalVariant.pressed] : [userProfileModalVariant.button];
       default:
         return isPressed ? [defaultStyles.button, defaultStyles.pressed] : [defaultStyles.button];
     }
@@ -22,6 +24,8 @@ const ButtonSecondary = ({ text, type = "default" }) => {
         return variant2Styles.text;
       case "closePollModalVariant":
         return closePollModalVariant.text;  
+      case "userProfileModalVariant":
+        return userProfileModalVariant.text;    
       default:
         return defaultStyles.text;
     }
@@ -99,6 +103,23 @@ const closePollModalVariant = StyleSheet.create({
   text: {
     fontFamily: "Roboto",
     fontSize: 14,
+    color: "white",
+  },
+});
+
+const userProfileModalVariant = StyleSheet.create({
+  ...defaultStyles,
+  button: {
+    backgroundColor: secondaryButtonColor,
+    width: 69,
+    height: 40,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 4,
+  },
+  text: {
+    fontFamily: "Roboto",
+    fontSize: 16,
     color: "white",
   },
 });
