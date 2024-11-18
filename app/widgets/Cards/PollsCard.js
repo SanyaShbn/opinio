@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { Box, HStack, VStack, Image, Text, Skeleton } from "native-base";
-import { StyledCardsDescription, StyledCardsText, StyledCardsTopic } from './../../settings/constants/TextConstants';
+import { StyledCardsDate, StyledCardsDescription, StyledCardsText, StyledCardsTopic } from './../../settings/constants/TextConstants';
 import ButtonPrimary from "../../shared/Buttons/ButtonPrimary";
 import { styles } from "./../../settings/constants/PollsCardStylesConstants";
 import Bonus from "../../shared/Bonus/Bonus";

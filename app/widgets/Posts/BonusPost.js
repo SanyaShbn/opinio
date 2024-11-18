@@ -5,7 +5,7 @@ import Bonus from "../../shared/Bonus/Bonus";
 import ButtonPrimary from "./../../shared/Buttons/ButtonPrimary";
 import ButtonSecondary from "./../../shared/Buttons/ButtonSecondary";
 
-const BonusPost = ({ bonusName, orgName = "Название организации", type = "default" }) => {
+const BonusPost = ({ bonusName="Название награды", orgName = "Название организации", type = "default" }) => {
   return (
     <Box {...(type === "default" ? styles.defaultBox : styles.variantTwoAndThreeBox)}>
       <Box {...styles.headerBox}>

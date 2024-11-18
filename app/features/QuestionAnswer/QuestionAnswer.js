@@ -11,6 +11,7 @@ const QuestionAnswer = () => {
   };
 
   return (
+    <Pressable onPress={handlePress}>
     <Box
       style={[
         styles.container,
@@ -22,14 +23,15 @@ const QuestionAnswer = () => {
           Вариант ответа
         </Text>
       </Box>
-      <Pressable onPress={handlePress}>
+     
         <Box style={[styles.circle, selected && styles.circleSelected]}>
           {selected && (
             <MaterialIcons name="check" size={16} color="#FFFFFF" />
           )}
         </Box>
-      </Pressable>
+     
     </Box>
+    </Pressable>
   );
 };
 
