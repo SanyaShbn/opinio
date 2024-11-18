@@ -3,7 +3,8 @@ import { Box, HStack, VStack, Text, Image, Skeleton } from "native-base";
 import ButtonSecondary from "../../shared/Buttons/ButtonSecondary";
 import { profileComponentTextStyles } from "./../../settings/constants/TextConstants";
 
-const Profile = ({ title, logo = require('../../settings/images/organization-logo-icon.png'), discussions, surveys, followers, description, buttonText }) => {
+const Profile = ({ title="Название организации", logo = require('../../settings/images/organization-logo-icon.png'), discussions=10, surveys=10,
+   followers=10, description="Описание организации", buttonText="Подписаться" }) => {
   
   const [isLoaded, setIsLoaded] = useState(false);
   

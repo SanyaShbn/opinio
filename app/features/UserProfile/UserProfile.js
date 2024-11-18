@@ -5,7 +5,8 @@ import { styles } from "../../settings/constants/UserProfileStylesConstants";
 import { defaultGrey } from "../../settings/constants/Colors";
 import ButtonSecondary from "../../shared/Buttons/ButtonSecondary";
 
-const UserProfile = ({ userName = "Пользователь", userLogin = "Логин пользователя", userOccupation = "Род деятельности", type = "default" }) => {
+const UserProfile = ({ userName = "Пользователь", userLogin = "Логин пользователя", userOccupation = "Род деятельности",
+   type = "default", onPress={...console.log("Button is pressed...")} }) => {
   return (
     <Box style={styles.container}>
       <Box style={styles.avatarContainer}>
@@ -32,7 +33,7 @@ const UserProfile = ({ userName = "Пользователь", userLogin = "Ло�
           </Pressable>
         </Box>
       ) : (
-        <ButtonSecondary text="Убрать" type="userProfileModalVariant"/>
+        <ButtonSecondary text="Убрать" type="userProfileModalVariant" onPress={onPress}/>
       )}
     </Box>
   );

@@ -6,8 +6,8 @@ import { styles } from "./../../settings/constants/PollsCardStylesConstants";
 import Bonus from "../../shared/Bonus/Bonus";
 
 
-const PollsCard = ({ logo = require('../../settings/images/organization-logo-icon.png'), type = "default", topic, text, date,
-   votesNumb, questionsNumb = 10, orgName }) => {
+const PollsCard = ({ logo = require('../../settings/images/organization-logo-icon.png'), type = "default",
+   topic="Медицина", text="Заголовок опроса", date="28.10.2024", votesNumb=100, questionsNumb=10, orgName="Название организации", onBonusPress }) => {
 
   const [isSourceLoaded, setIsSourceLoaded] = useState(false)
   const [isLogoLoaded, setIsLogoLoaded] = useState(false)
@@ -83,7 +83,7 @@ const PollsCard = ({ logo = require('../../settings/images/organization-logo-ico
         <VStack>
           <HStack justifyContent="space-between" alignItems="center" width="100%">
             <StyledCardsTopic>{topic}</StyledCardsTopic>
-            <Bonus />
+            <Bonus onPress={onBonusPress}/>
           </HStack>
           <VStack mt="2">
             <StyledCardsText>{text}</StyledCardsText>

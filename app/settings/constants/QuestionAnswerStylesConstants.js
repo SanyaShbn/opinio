@@ -2,10 +2,8 @@ import { background, defaultGrey } from "./Colors";
 
 export const styles = {
   container: {
-    width: 300,
+    width: 362,
     height: 50,
-    top: 20,
-    left: 20,
     paddingVertical: 4,
     paddingHorizontal: 15,
     borderRadius: 10,

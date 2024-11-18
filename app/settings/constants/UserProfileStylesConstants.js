@@ -6,7 +6,7 @@ export const styles = {
     gap: 20,
     flexDirection: "row",
     alignItems: "center",
-    borderWidth: 1,
+    // borderWidth: 1,
   },
   avatarContainer: {
     width: 72,
