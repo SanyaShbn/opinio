@@ -8,9 +8,9 @@ import React from "react";
 // import BonusPost from "./widgets/Posts/BonusPost"
 // import FilterBar from "./shared/FilterBar/FilterBar"
 // import QuestionAnswer from "./features/QuestionAnswer/QuestionAnswer"
-// import ClosePollModal from "./modals/ClosePollModal"
-// import BonusModal from "./modals/BonusModal";
-import UserProfile from "./widgets/Profile/UserProfile";
+// import ClosePollModal from "./widgets/modals/ClosePollModal"
+// import BonusModal from "./widgets/modals/BonusModal";
+// import UserProfile from "./features/UserProfile/UserProfile";
 
 export default function Index() {
   return (
@@ -45,7 +45,7 @@ Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor,
 
           {/* <BonusModal/> */}
 
-          <UserProfile userName="Евгений" type="variant2"/>
+          {/* <UserProfile userName="Евгений" type="variant2"/> */}
 
       </Center>
     </NativeBaseProvider>

@@ -1,8 +1,8 @@
 import React from "react";
 import { Box, Text, Pressable } from "native-base";
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
-import { styles } from "../settings/constants/BonusModalStylesConstants";
-import { defaultGrey } from "../settings/constants/Colors";
+import { styles } from "../../settings/constants/BonusModalStylesConstants";
+import { defaultGrey } from "../../settings/constants/Colors";
 
 const BonusModal = () => {
   return (

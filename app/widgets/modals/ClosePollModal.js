@@ -1,10 +1,10 @@
 import React from "react";
 import { Box, Text, Pressable } from "native-base";
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
-import { styles } from "../settings/constants/ClosePollModalStylesConstants";
-import { defaultGrey } from "../settings/constants/Colors";
-import ButtonPrimary from "../shared/Buttons/ButtonPrimary"
-import ButtonSecondary from "../shared/Buttons/ButtonSecondary"
+import { styles } from "../../settings/constants/ClosePollModalStylesConstants";
+import { defaultGrey } from "../../settings/constants/Colors";
+import ButtonPrimary from "../../shared/Buttons/ButtonPrimary"
+import ButtonSecondary from "../../shared/Buttons/ButtonSecondary"
 
 const ClosePollModal = ( {messageText} ) => {
   return (
