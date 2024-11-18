@@ -1,9 +1,9 @@
 import React from "react";
 import { Box, Text } from "native-base";
-import { styles } from "@/app/settings/constants/BonusPostStylesConstants";
+import { styles } from "../../settings/constants/BonusPostStylesConstants";
 import Bonus from "../../shared/Bonus/Bonus";
-import ButtonPrimary from "@/app/shared/Buttons/ButtonPrimary";
-import ButtonSecondary from "@/app/shared/Buttons/ButtonSecondary";
+import ButtonPrimary from "./../../shared/Buttons/ButtonPrimary";
+import ButtonSecondary from "./../../shared/Buttons/ButtonSecondary";
 
 const BonusPost = ({ bonusName, orgName = "Название организации", type = "default" }) => {
   return (

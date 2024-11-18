@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { Box, HStack, VStack, Text, Image, Skeleton } from "native-base";
 import ButtonSecondary from "../../shared/Buttons/ButtonSecondary";
-import { profileComponentTextStyles } from "@/app/settings/constants/TextConstants";
+import { profileComponentTextStyles } from "./../../settings/constants/TextConstants";
 
 const Profile = ({ title, logo = require('../../settings/images/organization-logo-icon.png'), discussions, surveys, followers, description, buttonText }) => {
   

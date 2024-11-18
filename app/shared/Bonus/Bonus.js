@@ -1,7 +1,9 @@
 import React from "react";
 import { Text, StyleSheet } from "react-native";
 import { Box } from "native-base";
-import { secondaryButtonColor } from "@/app/settings/constants/Colors";
+import { secondaryButtonColor } from './../../settings/constants/Colors';
+
+
 
 const Bonus = () => {
   return (

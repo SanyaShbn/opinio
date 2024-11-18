@@ -1,8 +1,10 @@
 import React from "react";
 import { Box, HStack, VStack, Text } from "native-base";
-import { StyledCardsText, StyledCardsTopic, StyledCardsDescription } from "@/app/settings/constants/TextConstants";
-import ButtonPrimary from "@/app/shared/Buttons/ButtonPrimary";
-import ButtonSecondary from "@/app/shared/Buttons/ButtonSecondary";
+
+
+import { StyledCardsDescription, StyledCardsText, StyledCardsTopic } from './../../settings/constants/TextConstants';
+import ButtonPrimary from "../../shared/Buttons/ButtonPrimary";
+import ButtonSecondary from "../../shared/Buttons/ButtonSecondary";
 
 const OrganizationCard = ({ type = "default", topic, text, description = "Описание", surveysNumb, topicsNumb }) => {
   let width = 225;

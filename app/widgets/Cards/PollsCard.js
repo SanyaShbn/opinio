@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from "react";
 import { Box, HStack, VStack, Image, Text, Skeleton } from "native-base";
-import { StyledCardsText, StyledCardsTopic, StyledCardsDate } from "@/app/settings/constants/TextConstants";
-import ButtonPrimary from "@/app/shared/Buttons/ButtonPrimary";
-import { styles } from "@/app/settings/constants/PollsCardStylesConstants";
+import { StyledCardsDescription, StyledCardsText, StyledCardsTopic } from './../../settings/constants/TextConstants';
+import ButtonPrimary from "../../shared/Buttons/ButtonPrimary";
+import { styles } from "./../../settings/constants/PollsCardStylesConstants";
 import Bonus from "../../shared/Bonus/Bonus";
-import { FullWindowOverlay } from "react-native-screens";
+
 
 const PollsCard = ({ logo = require('../../settings/images/organization-logo-icon.png'), type = "default", topic, text, date,
    votesNumb, questionsNumb = 10, orgName }) => {

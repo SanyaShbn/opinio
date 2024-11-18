@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Box, HStack, VStack, Text, Pressable, ScrollView, Image, Skeleton } from "native-base";
 import { MaterialIcons } from "@expo/vector-icons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import { styles } from "@/app/settings/constants/PostStylesConstants";
-import { primaryButtonColor, defaultGrey } from "@/app/settings/constants/Colors";
+import { styles } from "../../settings/constants/PostStylesConstants";
+import { primaryButtonColor, defaultGrey } from "../../settings/constants/Colors";
 
 const Post = ({ logo = require("../../settings/images/organization-logo-icon.png"), title, subtitle, content, comments, type = "default" }) => {
   const [isLoaded, setIsLoaded] = useState(false);

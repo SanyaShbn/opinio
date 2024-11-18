@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Text, Pressable, StyleSheet } from "react-native";
-import { primaryButtonColor } from "@/app/settings/constants/Colors";
+import { primaryButtonColor } from "../../settings/constants/Colors";
+
 
 const ButtonPrimary = ({ text, type = "default"}) => {
   const [isPressed, setIsPressed] = useState(false);
