@@ -6,7 +6,10 @@ import { defaultGrey } from "../../settings/constants/Colors";
 import ButtonPrimary from "../../shared/Buttons/ButtonPrimary"
 import ButtonSecondary from "../../shared/Buttons/ButtonSecondary"
 
-const ClosePollModal = ( {messageText} ) => {
+const ClosePollModal = ( {messageText, isOpen, onConfirm, onCancel} ) => {
+
+  if (!isOpen) return null;
+
   return (
     <Box style={styles.container}>
       <Box style={styles.topContainer}>
@@ -14,7 +17,7 @@ const ClosePollModal = ( {messageText} ) => {
           <Text style={styles.titleText}>Внимание!</Text>
         </Box>
         <Box style={styles.rightContainer}>
-          <Pressable>
+          <Pressable onPress={onCancel}>
             <MaterialCommunityIcons name="close-thick" size={22} color={defaultGrey}/>
           </Pressable>
         </Box>
@@ -27,8 +30,8 @@ const ClosePollModal = ( {messageText} ) => {
         </Box>
       </Box>
       <Box style={styles.bottomContainer}>
-        <ButtonSecondary text="Да" type="closePollModalVariant"/>
-        <ButtonPrimary text="Нет" type="closePollModalVariant"/>
+        <ButtonSecondary text="Да" type="closePollModalVariant" onPress={onConfirm}/>
+        <ButtonPrimary text="Нет" type="closePollModalVariant" onPress={onCancel}/>
       </Box>
     </Box>
   );

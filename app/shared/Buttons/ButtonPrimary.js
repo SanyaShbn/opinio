@@ -3,7 +3,7 @@ import { Text, Pressable, StyleSheet } from "react-native";
 import { secondaryColor } from "../../settings/constants/Colors";
 
 
-const ButtonPrimary = ({ text, type = "default"}) => {
+const ButtonPrimary = ({ text, type = "default", onPress={...console.log("Button is pressed...")}}) => {
   const [isPressed, setIsPressed] = useState(false);
 
   const getType = (type, isPressed) => {
@@ -16,6 +16,10 @@ const ButtonPrimary = ({ text, type = "default"}) => {
         return isPressed ? [closePollModalVariant.button, closePollModalVariant.pressed] : [closePollModalVariant.button];
       case "pollsCreationSettingsVariant":
         return isPressed ? [pollsCreationSettingsVariant.button, pollsCreationSettingsVariant.pressed] : [pollsCreationSettingsVariant.button];
+      case "pollsCompletingVariant":
+        return isPressed ? [pollsCompletingVariant.button, pollsCompletingVariant.pressed] : [pollsCompletingVariant.button];
+      case "confirmPollsCompletionVariant":
+        return isPressed ? [confirmPollsCompletionVariant.button, confirmPollsCompletionVariant.pressed] : [confirmPollsCompletionVariant.button];
       default:
         return isPressed ? [defaultStyles.button, defaultStyles.pressed] : [defaultStyles.button];
     }
@@ -31,6 +35,10 @@ const ButtonPrimary = ({ text, type = "default"}) => {
         return closePollModalVariant.text;
       case "pollsCreationSettingsVariant":
         return pollsCreationSettingsVariant.text;
+      case "pollsCompletingVariant":
+        return pollsCompletingVariant.text;
+      case "confirmPollsCompletionVariant":
+        return confirmPollsCompletionVariant.text;
       default:
         return defaultStyles.text;
     }
@@ -49,6 +57,7 @@ const ButtonPrimary = ({ text, type = "default"}) => {
       onPressIn={handlePressIn}
       onPressOut={handlePressOut}
       style={getType(type, isPressed)}
+      onPress={onPress}
     >
       <Text style={getTextStyle(type)}>{text}</Text>
     </Pressable>
@@ -129,6 +138,40 @@ const pollsCreationSettingsVariant = StyleSheet.create({
   button: {
     backgroundColor: secondaryColor,
     width: 114,
+    height: 40,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 4,
+  },
+  text: {
+    fontFamily: "Roboto",
+    fontSize: 16,
+    color: "white",
+  },
+});
+
+const pollsCompletingVariant = StyleSheet.create({
+  ...defaultStyles,
+  button: {
+    backgroundColor: secondaryColor,
+    width: 165,
+    height: 40,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 4,
+  },
+  text: {
+    fontFamily: "Roboto",
+    fontSize: 16,
+    color: "white",
+  },
+});
+
+const confirmPollsCompletionVariant = StyleSheet.create({
+  ...defaultStyles,
+  button: {
+    backgroundColor: secondaryColor,
+    width: 360,
     height: 40,
     justifyContent: "center",
     alignItems: "center",

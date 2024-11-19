@@ -16,6 +16,8 @@ const ButtonSecondary = ({ text, type = "default", onPress={...console.log("Butt
         return isPressed ? [userProfileModalVariant.button, userProfileModalVariant.pressed] : [userProfileModalVariant.button];
       case "pollsCreationSettingsVariant":
         return isPressed ? [pollsCreationSettingsVariant.button, pollsCreationSettingsVariant.pressed] : [pollsCreationSettingsVariant.button];
+      case "pollsCompletingVariant":
+        return isPressed ? [pollsCompletingVariant.button, pollsCompletingVariant.pressed] : [pollsCompletingVariant.button];  
       default:
         return isPressed ? [defaultStyles.button, defaultStyles.pressed] : [defaultStyles.button];
     }
@@ -31,6 +33,8 @@ const ButtonSecondary = ({ text, type = "default", onPress={...console.log("Butt
         return userProfileModalVariant.text;
       case "pollsCreationSettingsVariant":
         return pollsCreationSettingsVariant.text;  
+      case "pollsCompletingVariant":
+        return pollsCompletingVariant.text;  
       default:
         return defaultStyles.text;
     }
@@ -165,6 +169,23 @@ const pollsCreationSettingsVariant = StyleSheet.create({
     shadowOffset: { width: 0, height: 4 },
     shadowRadius: 6,
     shadowOpacity: 1,
+  },
+  text: {
+    fontFamily: "Roboto",
+    fontSize: 16,
+    color: "white",
+  },
+});
+
+const pollsCompletingVariant = StyleSheet.create({
+  ...defaultStyles,
+  button: {
+    backgroundColor: specificColor,
+    width: 165,
+    height: 40,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 4,
   },
   text: {
     fontFamily: "Roboto",
