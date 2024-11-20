@@ -22,11 +22,6 @@ export default function Index() {
       requiredAnswers: 1,
     },
     {
-      questionText: "Сосал?",
-      answers: ["ДА", "Да", "дА", "да"],
-      requiredAnswers: 2,
-    },
-    {
       questionText: "Любимые цифры?",
       answers: ["1", "2", "3", "4", "5"],
       requiredAnswers: 3,
