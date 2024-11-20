@@ -75,4 +75,26 @@ export const styles = {
       textUnderlinePosition: "from-font",
       textDecorationSkipInk: "none",
     },
-  };
+    overlay: {
+      position: "absolute",
+      backgroundColor: "rgba(0, 0, 0, 0.5)",
+    },
+    thankYouContainer: {
+      width: "100%",
+      height: 400,
+      paddingTop: 40,
+      paddingRight: 10,
+      paddingBottom: 70,
+      paddingLeft: 10,
+      marginVertical: 10,
+      gap: 10,
+      alignItems: "center",
+    },
+    thankYouText: {
+      fontFamily: "Roboto",
+      fontSize: 20,
+      fontWeight: "bold",
+      textUnderlinePosition: "from-font",
+      textDecorationSkipInk: "none",
+    },
+};
