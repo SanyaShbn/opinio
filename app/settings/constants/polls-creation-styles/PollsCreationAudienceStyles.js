@@ -1,0 +1,55 @@
+export const styles = {
+    container: {
+      width: "100%",
+      height: "100%",
+      padding: "0px 30px 0px 30px",
+    },
+    tabsContainer: {
+      width: "100%",
+      height: "44px",
+      padding: "0px 30px 0px 30px",
+    },
+    contentContainer: {
+      width: "100%",
+      height: "609px",
+      gap: "10px",
+      padding: 30,
+      alignItems: "left",
+    },
+    contentContainer2: {
+      width: "100%",
+      height: 80,
+      marginTop: 80,
+      alignItems: "center",
+    },
+    inputFieldContainer: {
+      width: "100%",
+      height: 43,
+      gap: 10,
+      paddingTop: 20,
+      paddingBottom: 10,
+    },
+    textStyle: {
+      fontFamily: "Roboto",
+      fontSize: 20,
+      fontWeight: "400",
+      lineHeight: 30,
+      textAlign: "center",
+      textUnderlinePosition: "from-font",
+      textDecorationSkipInk: "none",
+    },
+    checkboxTextStyle: {
+      fontFamily: "Roboto",
+      fontSize: 18,
+      fontWeight: "400",
+      lineHeight: 27,
+      textAlign: "center",
+      textUnderlinePosition: "from-font",
+      textDecorationSkipInk: "none",
+    },
+    inputField: {
+      width: "100%",
+      height: 43,
+      gap: 10,
+    },
+  };

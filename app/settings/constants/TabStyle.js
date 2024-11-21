@@ -1,11 +1,10 @@
 import { StyleSheet } from 'react-native';
-import { tabsDefaultColor, tabsActiveDefaultColor, tabsActiveSecondVariantColor } from './Colors';
+import { defaultGrey, tabsActiveDefaultColor, tabsActiveSecondVariantColor } from './Colors';
 
 export const tabsStyles = StyleSheet.create({
     container: {
       flexDirection: 'row',
       justifyContent: 'space-around',
-      marginTop: 50,
     },
     menuItem: {
       alignItems: 'center',
@@ -13,7 +12,7 @@ export const tabsStyles = StyleSheet.create({
     text: {
       fontFamily: 'Roboto',
       fontSize: 16,
-      color: tabsDefaultColor,
+      color: defaultGrey,
     },
     activeText: {
       color: tabsActiveDefaultColor,
