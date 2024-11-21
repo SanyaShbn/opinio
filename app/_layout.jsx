@@ -1,4 +1,4 @@
-import { Link, Stack } from "expo-router";
+import { Link, Stack, useRouter } from "expo-router";
 import { Icon, NativeBaseProvider } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
 import { mainColor, primaryColor } from "./settings/constants/Colors";
@@ -19,15 +19,13 @@ function RootLayout() {
   const handlePressOut = () => {
     setPressedIcon(null);
   };
-
-  const createScreen = (name, title, pathBack) => {
+  const router = useRouter();
+  const createScreen = (name, title) => {
     return (
       <Stack.Screen
         name={name}
         options={{
-          //     headerLeft: () => <Link href={pathBack} >
-          //     <Icon as={Ionicons} name="arrow-back" color={mainColor} size={10} />
-          // </Link>,
+ 
 
           headerTitle: () => (
             <Text
@@ -77,10 +75,36 @@ function RootLayout() {
           }}
         />
 
-        {createScreen("pages/home/(polls)/category", "По категориям", HOME)}
-        {createScreen("pages/home/(polls)/popular", "Популярное", HOME)}
-        {createScreen("pages/home/(polls)/new", "Новинки", HOME)}
-        {createScreen("pages/home/all", "Все", HOME)}
+        {createScreen("pages/home/(polls)/category", "По категориям")}
+        {createScreen("pages/home/(polls)/popular", "Популярное")}
+        {createScreen("pages/home/(polls)/new", "Новинки")}
+        {createScreen("pages/home/all", "Все")}
+        {createScreen("pages/getstarted/role/Role", "Выбрать режим")}
+        {createScreen("pages/getstarted/role/auth/Citizen", "Регистрация")}
+        <Stack.Screen
+          name="pages/getstarted/main/index"
+          options={{
+            headerLeft: () => {},
+            headerTitle: () => {
+              return (
+                <Text
+                  style={{
+                    fontFamily: "Roboto",
+                    fontSize: 20,
+                    fontWeight: "500",
+                    lineHeight: 24,
+                    marginLeft: -100,
+                    textAlign: "center",
+                    color: "black",
+                  }}
+                ></Text>
+              );
+            },
+            headerRight: () => {},
+          }}
+        />
+
+   
       </Stack>
     </NativeBaseProvider>
   );

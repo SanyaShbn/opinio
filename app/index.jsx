@@ -5,7 +5,7 @@ import { NativeBaseProvider } from "native-base";
 export default function Index() {
   return (
     <NativeBaseProvider>
-      <Redirect href={"/" + HOME} />
+      <Redirect href={"/pages/getstarted/main"} />
     </NativeBaseProvider>
   );
 }

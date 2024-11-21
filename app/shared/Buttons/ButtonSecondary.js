@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Text, Pressable, StyleSheet } from "react-native";
-import { secondaryButtonColor } from "../../settings/constants/Colors";
+import { secondaryButtonColor, specificColor } from "../../settings/constants/Colors";
+import { Link } from "expo-router";
 
 
 const ButtonSecondary = ({ text, type = "default" }) => {
@@ -14,6 +15,8 @@ const ButtonSecondary = ({ text, type = "default" }) => {
         return isPressed ? [closePollModalVariant.button, closePollModalVariant.pressed] : [closePollModalVariant.button];
       case "userProfileModalVariant":
         return isPressed ? [userProfileModalVariant.button, userProfileModalVariant.pressed] : [userProfileModalVariant.button];
+      case "getStartedButton":
+        return isPressed ? [getStartedButton.button, getStartedButton.pressed] : [getStartedButton.button];
       default:
         return isPressed ? [defaultStyles.button, defaultStyles.pressed] : [defaultStyles.button];
     }
@@ -26,7 +29,9 @@ const ButtonSecondary = ({ text, type = "default" }) => {
       case "closePollModalVariant":
         return closePollModalVariant.text;  
       case "userProfileModalVariant":
-        return userProfileModalVariant.text;    
+        return userProfileModalVariant.text; 
+      case "getStartedButton":
+        return getStartedButton.text
       default:
         return defaultStyles.text;
     }
@@ -40,13 +45,32 @@ const ButtonSecondary = ({ text, type = "default" }) => {
     setIsPressed(false);
   };
 
+  const getText=(type,text)=>{
+
+    switch (type) {
+      case "bonusPostVariant":
+       return  <Text style={getTextStyle(type)}>{text}</Text>
+      case "closePollModalVariant":
+        return  <Text style={getTextStyle(type)}>{text}</Text>
+      case "userProfileModalVariant":
+        return  <Text style={getTextStyle(type)}>{text}</Text>
+      case "getStartedButton":
+        return   <Link href={"/pages/getstarted/role/Role"}>
+        <Text style={getTextStyle(type)}>{text}</Text>
+     </Link>
+      default:
+        return defaultStyles.text;
+    }
+
+  }
+
   return (
     <Pressable
       onPressIn={handlePressIn}
       onPressOut={handlePressOut}
       style={getType(type, isPressed)}
     >
-      <Text style={getTextStyle(type)}>{text}</Text>
+      {getText(type, text)}
     </Pressable>
   );
 };
@@ -121,6 +145,23 @@ const userProfileModalVariant = StyleSheet.create({
   text: {
     fontFamily: "Roboto",
     fontSize: 16,
+    color: "white",
+  },
+});
+
+const getStartedButton = StyleSheet.create({
+  ...defaultStyles,
+  button: {
+    backgroundColor: specificColor,
+    width: 224,
+    height: 53,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 4,
+  },
+  text: {
+    fontFamily: "Roboto",
+    fontSize: 18,
     color: "white",
   },
 });
