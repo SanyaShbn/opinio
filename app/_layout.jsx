@@ -8,6 +8,8 @@ import HeaderTopSearch from "./processes/Navigation/Header/HeaderTop/HeaderTopSe
 import { useState } from "react";
 import HeaderTopPreviousPage from "./processes/Navigation/Header/HeaderTop/HeaderTopPreviousPage";
 import { HOME } from "./settings/api/navigation";
+import { Provider } from "react-redux";
+import store from "./processes/store/store";
 
 function RootLayout() {
   const [pressedIcon, setPressedIcon] = useState(null);
@@ -47,7 +49,66 @@ function RootLayout() {
     );
   };
 
+  const createSearchScreen=(name)=>{
+    return   <Stack.Screen
+    name={name}
+    options={{
+      headerLeft: () => <Text style={header.headerText}>Opinio</Text>,
+      headerTitle: () => {
+        <View></View>;
+      },
+      headerRight: () => (
+        <Pressable
+          onPressIn={() => handlePressIn("search")}
+          onPressOut={handlePressOut}
+          onPress={() => console.log("Search pressed")}
+          style={header.headerIcon}
+        >
+          <Icon as={Ionicons} name="search" color={"white"} size="xl" />
+        </Pressable>
+      ),
+    }}
+  />
+  }
+
+  const createSearchBackScreen=(name)=>{
+
+    return( <Stack.Screen
+    name={name}
+    options={{
+
+
+      headerTitle: () => (
+        <Text
+          style={{
+            fontFamily: "Roboto",
+            fontSize: 20,
+            fontWeight: "500",
+            lineHeight: 24,
+            marginLeft: -100,
+            textAlign: "center",
+            color: "white",
+          }}
+        >
+          Opinio
+        </Text>
+      ),
+      headerRight: () => (
+        <Pressable
+          onPressIn={() => handlePressIn("search")}
+          onPressOut={handlePressOut}
+          onPress={() => console.log("Search pressed")}
+          style={header.headerIcon}
+        >
+          <Icon as={Ionicons} name="search" color={"white"} size="xl" />
+        </Pressable>
+      ),
+    }}
+  />)
+  }
+
   return (
+    <Provider store={store}>
     <NativeBaseProvider>
       <Stack
         screenOptions={{
@@ -75,12 +136,15 @@ function RootLayout() {
           }}
         />
 
-        {createScreen("pages/home/(polls)/category", "По категориям")}
+  
         {createScreen("pages/home/(polls)/popular", "Популярное")}
         {createScreen("pages/home/(polls)/new", "Новинки")}
         {createScreen("pages/home/all", "Все")}
         {createScreen("pages/getstarted/role/Role", "Выбрать режим")}
         {createScreen("pages/getstarted/role/auth/Citizen", "Регистрация")}
+        {createScreen("pages/getstarted/role/auth/Category", "Выбор опросов")}
+        {createSearchBackScreen("pages/home/(polls)/category")}
+        {createScreen("pages/home/(polls)/all", "Все")}
         <Stack.Screen
           name="pages/getstarted/main/index"
           options={{
@@ -107,6 +171,7 @@ function RootLayout() {
    
       </Stack>
     </NativeBaseProvider>
+    </Provider>
   );
 }
 

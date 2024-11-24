@@ -1,12 +1,9 @@
-// import { Redirect } from "expo-router";
-// import { HOME } from "./settings/api/navigation";
+
 import { NativeBaseProvider } from "native-base";
-import PollsCompleting from "./pages/polls-completion/PollsCompleting";
-// import OrganizationView from "./pages/organization-view/OrganizationView";
-// import OrganizationPostsView from "./pages/organization-view/OrganizationPostsView";
-// import ViewedByOthersUserProfile from "./pages/viewed-user-profile/ViewedByOthersUserProfile";
-// import PollsCreationAudience from "./pages/polls-creation/PollsCreationAudience";
-// import PollsCreationSettings from "./pages/polls-creation/PollsCreationSettings";
+
+import { Redirect } from "expo-router";
+import { Provider } from "react-redux";
+import store from "./processes/store/store";
 
 export default function Index() {
 
@@ -30,8 +27,16 @@ export default function Index() {
   ];
   
   return (
-    <NativeBaseProvider>
+
+   
+ 
+ <NativeBaseProvider>
+   <Provider store={store}>
       <Redirect href={"/pages/getstarted/main"} />
+      </Provider>
     </NativeBaseProvider>
+
+
+   
   );
 }

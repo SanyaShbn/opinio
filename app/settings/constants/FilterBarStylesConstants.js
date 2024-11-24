@@ -24,7 +24,7 @@ export const styles = {
   },
   text: {
     fontFamily: "Roboto",
-    fontSize: "14",
+    fontSize: 14,
     fontWeight: "500",
     textAlign: "center",
     lineHeight: "21",

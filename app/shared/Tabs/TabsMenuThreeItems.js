@@ -16,25 +16,25 @@ const MenuItem = ({ label, isActive, onPress }) => {
   )
 }
 
-const TabsMenuThreeItems = ({label1, label2, label3}) => {
-  const [activeIndex, setActiveIndex] = useState(0)
+const TabsMenuThreeItems = ({label1, label2, label3,initValue,handleChange}) => {
+  // const [activeIndex, setActiveIndex] = useState(0)
 
   return (
     <View style={tabsStyles.container}>
       <MenuItem
         label={label1}
-        isActive={activeIndex === 0}
-        onPress={() => setActiveIndex(0)}
+        isActive={initValue === 0}
+        onPress={() => handleChange(0)}
       />
       <MenuItem
         label={label2}
-        isActive={activeIndex === 1}
-        onPress={() => setActiveIndex(1)}
+        isActive={initValue === 1}
+        onPress={() => handleChange(1)}
       />
       <MenuItem
         label={label3}
-        isActive={activeIndex === 2}
-        onPress={() => setActiveIndex(2)}
+        isActive={initValue === 2}
+        onPress={() => handleChange(2)}
       />
     </View>
   )

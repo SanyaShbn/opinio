@@ -81,7 +81,7 @@ const defaultStyles = StyleSheet.create({
     shadowOpacity: 1,
   },
   text: {
-    fontFamily: "Roboto",
+    // fontFamily: 'Roboto',
     fontSize: 16,
     color: "white",
   },
@@ -98,7 +98,7 @@ const variant3Styles = StyleSheet.create({
     borderRadius: 4,
   },
   text: {
-    fontFamily: "Roboto",
+    // fontFamily: "Roboto",
     fontSize: 10,
     color: "white",
   },
@@ -127,7 +127,7 @@ const closePollModalVariant = StyleSheet.create({
     borderRadius: 4,
   },
   text: {
-    fontFamily: "Roboto",
+    fontFamily: 'Roboto',
     fontSize: 14,
     color: "white",
   },
@@ -144,7 +144,7 @@ const pollsCreationSettingsVariant = StyleSheet.create({
     borderRadius: 4,
   },
   text: {
-    fontFamily: "Roboto",
+    fontFamily: 'Roboto',
     fontSize: 16,
     color: "white",
   },
@@ -161,7 +161,7 @@ const pollsCompletingVariant = StyleSheet.create({
     borderRadius: 4,
   },
   text: {
-    fontFamily: "Roboto",
+    fontFamily: 'Roboto',
     fontSize: 16,
     color: "white",
   },
@@ -178,7 +178,7 @@ const confirmPollsCompletionVariant = StyleSheet.create({
     borderRadius: 4,
   },
   text: {
-    fontFamily: "Roboto",
+    fontFamily: 'Roboto',
     fontSize: 16,
     color: "white",
   },
