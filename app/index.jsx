@@ -4,7 +4,7 @@ import { NativeBaseProvider } from "native-base";
 import { Redirect } from "expo-router";
 import { Provider } from "react-redux";
 import store from "./processes/store/store";
-import OrganizationPostsViewExpanded from "./pages/organization-view/OrganizationPostsViewExpanded";
+import LoginPage from "./pages/login/LoginPage";
 
 export default function Index() {
 
@@ -21,7 +21,8 @@ export default function Index() {
    <Provider store={store}>
       <Redirect href={"/pages/getstarted/main"} />
       </Provider> */}
-      <OrganizationPostsViewExpanded/>
+
+      <LoginPage/>
 
 
     </NativeBaseProvider>
