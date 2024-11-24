@@ -1,3 +1,5 @@
+import { background } from "../Colors";
+
 export const styles = {
   container: {
     width: "100%",
@@ -11,7 +13,7 @@ export const styles = {
   },
   contentContainer: {
     width: "100%",
-    height: "100%",
+    flex: 1,
     gap: "10px",
   },
   contentContainer1: {
@@ -23,11 +25,10 @@ export const styles = {
     paddingLeft: 20,
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center",
   },
   contentContainer2: {
     width: "100%",
-    height: 374,
+    height: 400,
     paddingVertical: 6,
     borderBottomWidth: 1,
     borderBottomColor: "rgba(118, 118, 118, 0.5)",
@@ -41,6 +42,7 @@ export const styles = {
     paddingBottom: 2,
     paddingLeft: 20,
     flexDirection: "row",
+    alignItems: "center",
     justifyContent: "space-between",
   },
   answersContainer: {
@@ -51,9 +53,16 @@ export const styles = {
     paddingBottom: 10,
     paddingLeft: 20,
     gap: 15,
-    alignItems: "center",
+  },
+  questionAnswerContainer: {
+    width: "100%",
+    paddingTop: 10,
+    paddingRight: 20,
+    paddingBottom: 10,
+    paddingLeft: 20,
   },
   contentContainer3: {
+    // marginBottom: "20%",
     width: "100%",
     height: 246,
     padding: 10,
@@ -61,7 +70,7 @@ export const styles = {
     alignItems: "center",
   },
   inputFieldContainer: {
-    width: "80%",
+    width: "100%",
     height: 55,
     gap: 10,
   },
@@ -76,7 +85,6 @@ export const styles = {
     textDecorationSkipInk: "none",
   },
   inputField: {
-    width: "100%",
     height: 43,
     gap: 10,
   },

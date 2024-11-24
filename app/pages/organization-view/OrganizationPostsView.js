@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Center } from "native-base";
+import { Box, Center, ScrollView } from "native-base";
 import { styles } from "../../settings/constants/organization-view-styles/OrganizationViewStyles";
 import FilterBar from "../../shared/FilterBar/FilterBar";
 import Profile from "../../widgets/Profile/Profile";
@@ -21,7 +21,7 @@ const OrganizationPostsView = () => {
         <TabsMenuTwoItems label1={"Опросы"} label2={"Обсуждения"}/>
       </Box>
 
-      <Box>
+      <ScrollView>
         <Box style={styles.filterBarContainer}>
             <FilterBar />
         </Box>
@@ -34,7 +34,16 @@ const OrganizationPostsView = () => {
         <Box style={styles.pollsCardsAndPosts}>
             <Post/>
         </Box>
-      </Box>
+        <Box style={styles.pollsCardsAndPosts}>
+            <Post/>
+        </Box>
+        <Box style={styles.pollsCardsAndPosts}>
+            <Post/>
+        </Box>
+        <Box style={styles.pollsCardsAndPosts}>
+            <Post/>
+        </Box>
+      </ScrollView>
     </Box>
   );
 };

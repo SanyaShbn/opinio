@@ -7,10 +7,6 @@ export const styles = {
     paddingVertical: 4,
     paddingHorizontal: 15,
     borderRadius: 10,
-    // borderTopLeftRadius: 10,
-    // borderTopRightRadius: 0,
-    // borderBottomLeftRadius: 0,
-    // borderBottomRightRadius: 0,
     borderWidth: 2,
     borderColor: defaultGrey,
     flexDirection: "row",
@@ -23,7 +19,7 @@ export const styles = {
     borderColor: "transparent",
   },
   textContainer: {
-    width: 125,
+    width: "80%",
     height: 24,
   },
   text: {

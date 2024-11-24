@@ -6,7 +6,7 @@ export const styles = {
     height: "43px",
     gap: "20px",
   },
-  innerContainer: {
+  filterContainer: {
     width: "70px",
     height: "28px",
     gap: "6px",
@@ -14,8 +14,8 @@ export const styles = {
     justifyContent: "center",
     flexDirection: "row",
   },
-  innerContainerWide: {
-    width: "90px",
+  sortingContainer: {
+    width: "120px",
     height: "28px",
     gap: "6px",
     alignItems: "center",
