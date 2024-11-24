@@ -6,7 +6,7 @@ import { StyledCardsDescription, StyledCardsText, StyledCardsTopic } from './../
 import ButtonPrimary from "../../shared/Buttons/ButtonPrimary";
 import ButtonSecondary from "../../shared/Buttons/ButtonSecondary";
 
-const OrganizationCard = ({ type = "default", topic, text, description = "Описание", surveysNumb, topicsNumb }) => {
+const OrganizationCard = ({ type = "default", topic, text, description = "Описание", surveysNumb, topicsNumb,handleCardClick, data }) => {
   let width = 225;
   let height = 125;
 
@@ -27,7 +27,7 @@ const OrganizationCard = ({ type = "default", topic, text, description = "Опи
       shadow={8}
       elevation={5}
     >
-      <VStack justifyContent="space-between" height="100%" flex={1}>
+      <VStack justifyContent="space-between" height='100%' flex={1}>
         <VStack>
           <StyledCardsTopic>{topic}</StyledCardsTopic>
           <StyledCardsText>{text}</StyledCardsText>
@@ -38,7 +38,7 @@ const OrganizationCard = ({ type = "default", topic, text, description = "Опи
           </VStack>
         )}
         <HStack alignItems="center" width="100%" mt="auto" mb={2}>
-          <Text fontSize="10" color="gray.500" flex={1} textAlign="left">
+          <Text fontSize={10} style={{color:'gray'}} flex={1} textAlign='left'>
             {surveysNumb} опросов | {topicsNumb} тем
           </Text>
           {type === "variant3" ? (
@@ -47,7 +47,7 @@ const OrganizationCard = ({ type = "default", topic, text, description = "Опи
               <ButtonSecondary text="Отписаться" />
             </HStack>
           ) : (
-            <ButtonPrimary text="Обзор" type="default" />
+            <ButtonPrimary text="Обзор" type="default" onPress={()=>handleCardClick(data.id)}/>
           )}
         </HStack>
       </VStack>

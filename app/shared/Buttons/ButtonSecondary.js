@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Text, Pressable, StyleSheet } from "react-native";
-import { specificColor, primaryColor } from "../../settings/constants/Colors";
+import { specificColor, primaryColor, mainColor } from "../../settings/constants/Colors";
+import { Link } from "expo-router";
 
 
 const ButtonSecondary = ({ text, type = "default", onPress={} }) => {
@@ -96,9 +97,9 @@ const defaultStyles = StyleSheet.create({
     shadowOpacity: 1,
   },
   text: {
-    fontFamily: "Roboto",
+    // fontFamily: "Roboto",
     fontSize: 10,
-    color: "white",
+    color: mainColor,
   }
 });
 

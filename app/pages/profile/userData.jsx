@@ -1,16 +1,11 @@
-import { Pressable, Text, View } from "react-native";
-
-import { Box, Button, Center, Input } from "native-base";
-import { styles } from "./style";
-import { Select } from "native-base";
+import { Box, Button, Center, CheckIcon, Input, Select, Text, View, VStack } from "native-base";
+import TabsMenuThreeItems from '../../shared/Tabs/TabsMenuThreeItems';
 import { useState } from "react";
-import {  CheckIcon } from "native-base";
-import DateTimePicker from '@react-native-community/datetimepicker';
-import { formatDate } from "../../../../shared/util/formatDate";
-import { role } from './../role';
-import { useRouter } from "expo-router";
-function Citizen() {
-  const router = useRouter()
+import { DateTimePicker } from '@react-native-community/datetimepicker';
+import { Pressable } from "react-native";
+import { formatDate } from "../../shared/util/formatDate";
+import { role } from "../getstarted/role/role";
+function Userdata() {
 
     const [service, setService] =useState("");
 
@@ -25,8 +20,10 @@ function Citizen() {
     }; 
         const showDatepicker = () => { setShow(true)};
 
-  return (
-    <Box width={"100%"}>
+    return ( 
+  
+
+<Box width={"100%"}>
        <Center>
         <Box maxW="80%" style={{width:'100%',gap:10}}  pt={30}>
        
@@ -83,7 +80,8 @@ function Citizen() {
       </Box>
       </Center>
     </Box>
-  );
+
+    );
 }
 
-export default Citizen;
+export default Userdata;

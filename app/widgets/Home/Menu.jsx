@@ -3,6 +3,9 @@ import { menu } from "./style";
 import { Link } from "expo-router";
 
 function Menu() {
+
+  
+
   return (
     <View style={menu.container}>
       <View style={menu.column}>

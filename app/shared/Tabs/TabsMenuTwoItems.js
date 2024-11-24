@@ -16,20 +16,20 @@ const MenuItem = ({ label, isActive, onPress }) => {
   )
 }
 
-const TabsMenuTwoItems = ({label1, label2}) => {
-  const [activeIndex, setActiveIndex] = useState(0)
+const TabsMenuTwoItems = ({label1, label2, handleOnChange,initValue}) => {
+  // const [activeIndex, setActiveIndex] = useState(initValue)
 
   return (
     <View style={tabsStyles.container}>
       <MenuItem
         label={label1}
-        isActive={activeIndex === 0}
-        onPress={() => setActiveIndex(0)}
+        isActive={initValue === 0}
+        onPress={() => { handleOnChange(0)}}
       />
       <MenuItem
         label={label2}
-        isActive={activeIndex === 1}
-        onPress={() => setActiveIndex(1)}
+        isActive={initValue === 1}
+        onPress={() => {handleOnChange(1)}}
       />
     </View>
   )
