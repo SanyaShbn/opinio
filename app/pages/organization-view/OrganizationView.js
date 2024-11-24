@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Center, Modal, Button, Text } from "native-base";
+import { Box, Center, Modal, ScrollView } from "native-base";
 import { styles } from "../../settings/constants/organization-view-styles/OrganizationViewStyles";
 import FilterBar from "../../shared/FilterBar/FilterBar";
 import Profile from "../../widgets/Profile/Profile";
@@ -26,7 +26,7 @@ const OrganizationView = () => {
         <TabsMenuTwoItems label1={"Опросы"} label2={"Обсуждения"} />
       </Box>
 
-      <Box>
+      <ScrollView>
         <Box style={styles.filterBarContainer}>
           <FilterBar />
         </Box>
@@ -39,7 +39,16 @@ const OrganizationView = () => {
         <Box style={styles.pollsCardsAndPosts}>
           <PollsCard type="variant2" onBonusPress={toggleModalVisibility}/>
         </Box>
-      </Box>
+        <Box style={styles.pollsCardsAndPosts}>
+          <PollsCard type="variant2" onBonusPress={toggleModalVisibility}/>
+        </Box>
+        <Box style={styles.pollsCardsAndPosts}>
+          <PollsCard type="variant2" onBonusPress={toggleModalVisibility}/>
+        </Box>
+        <Box style={styles.pollsCardsAndPosts}>
+          <PollsCard type="variant2" onBonusPress={toggleModalVisibility}/>
+        </Box>
+      </ScrollView>
 
       {isModalVisible && <Box style={styles.overlay} />}
       <Center styles={styles.modalContent}>

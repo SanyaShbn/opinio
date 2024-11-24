@@ -3,7 +3,7 @@ import { Text, Pressable, StyleSheet } from "react-native";
 import { secondaryColor } from "../../settings/constants/Colors";
 
 
-const ButtonPrimary = ({ text, type = "default", onPress={...console.log("Button is pressed...")}}) => {
+const ButtonPrimary = ({ text, type = "default", onPress={}}) => {
   const [isPressed, setIsPressed] = useState(false);
 
   const getType = (type, isPressed) => {
@@ -137,7 +137,7 @@ const pollsCreationSettingsVariant = StyleSheet.create({
   ...defaultStyles,
   button: {
     backgroundColor: secondaryColor,
-    width: 114,
+    width: 200,
     height: 40,
     justifyContent: "center",
     alignItems: "center",
