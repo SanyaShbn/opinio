@@ -142,7 +142,9 @@ function RootLayout() {
         {createScreen("pages/home/all", "Все")}
         {createScreen("pages/getstarted/role/Role", "Выбрать режим")}
         {createScreen("pages/getstarted/role/auth/Citizen", "Регистрация")}
+        {createScreen("pages/getstarted/role/auth/Organization", "Регистрация")}
         {createScreen("pages/getstarted/role/auth/Category", "Выбор опросов")}
+        {createScreen("pages/getstarted/role/auth/CompanyInfo", "О компании")}
         {createSearchBackScreen("pages/home/(polls)/category")}
         {createScreen("pages/home/(polls)/all", "Все")}
         <Stack.Screen
