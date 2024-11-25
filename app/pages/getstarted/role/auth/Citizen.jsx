@@ -9,6 +9,8 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import { formatDate } from "../../../../shared/util/formatDate";
 import { role } from './../role';
 import { useRouter } from "expo-router";
+import { useSelector } from "react-redux";
+import { getActivities } from "../../../../processes/store/slices/activitySlice";
 function Citizen() {
   const router = useRouter()
 
@@ -24,7 +26,7 @@ function Citizen() {
         setDate(currentDate); 
     }; 
         const showDatepicker = () => { setShow(true)};
-
+const activityList = useSelector(getActivities)
   return (
     <Box width={"100%"}>
        <Center>
@@ -42,16 +44,23 @@ function Citizen() {
           </Center>
 
 
-          <Select selectedValue={service} minWidth="200" accessibilityLabel="Род деятельности" placeholder="Род деятельности" _selectedItem={{
-        bg: "teal.600",
-        endIcon: <CheckIcon size="5" />
-      }} mt={1} onValueChange={itemValue => setService(itemValue)}>
-          <Select.Item label="UX Research" value="ux" />
-          <Select.Item label="Web Development" value="web" />
-          <Select.Item label="Cross Platform Development" value="cross" />
-          <Select.Item label="UI Designing" value="ui" />
-          <Select.Item label="Backend Development" value="backend" />
-        </Select>
+          <Select
+            selectedValue={service}
+            minWidth="200"
+            accessibilityLabel="Род деятельности"
+            placeholder="Род деятельности"
+            _selectedItem={{
+              bg: "teal.600",
+              endIcon: <CheckIcon size="5" />,
+            }}
+            mt={1}
+            onValueChange={(itemValue) => setService(itemValue)}
+          >
+            {activityList.map((item, index) => (
+              <Select.Item key={index} value={item.id} label={item.name}  />
+            ))
+            }
+          </Select>
 
         <Center>
             <Input size={"xl"} mx="3" placeholder={"Название деятельности"} width={"100%"}/>

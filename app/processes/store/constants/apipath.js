@@ -15,6 +15,16 @@ const api={
     subscriptions:{
         url:base.concat("subscriptions"),
         fetch:"/",
+    },
+    user:{
+        url:base.concat(""),
+        auth:base.concat("/authrization"),
+        signUpUser:base.concat("/sign-up-user"),
+        signUpOrg:base.concat("/sign-up-org")
+    },
+    activity:{
+        url:base.concat(""),
+        fetch:"/",
     }
    
 }
