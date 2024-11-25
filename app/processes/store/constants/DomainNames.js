@@ -3,7 +3,8 @@ const DomainNames = {
     user:"user",
     organization:"organization",
     category:"category",
-    subscriptions:"subscriptions"
+    subscriptions:"subscriptions",
+    activity:"activity"
 
 
 }
