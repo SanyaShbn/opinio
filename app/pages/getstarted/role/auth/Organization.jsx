@@ -48,12 +48,12 @@ function Organization() {
   };
 
   const onSubmit = useCallback((formData) => {
-    console.log(formData);
+  
     
     checkPassword(formData);
 
     if(checkPassword(formData)){
-      dispatch(setUserdata({login:formData["login"], }))
+      dispatch(setUserdata({login:formData["login"], activity:formData["activity"]}))
       router.replace("pages/getstarted/role/auth/CompanyInfo");
     }
 
