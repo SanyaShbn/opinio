@@ -23,6 +23,9 @@ export const styles = {
       inputContainer: {
         flexDirection: 'row',
         alignItems: 'center',
+        justifyContent: 'center',
+        paddingLeft: 30,
+        paddingRight: 30,
         width: '100%',
         height: 50,
         backgroundColor: '#f1f1f1',
@@ -30,8 +33,15 @@ export const styles = {
         paddingHorizontal: 10,
         marginBottom: 20,
       },
-      icon: {
-        marginRight: 10,
+      eyeIconContainer: {
+        position: 'absolute',
+        right: 10,
+        height: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+      eyeIcon: {
+        marginRight: 0,
       },
       input: {
         flex: 1,
@@ -56,4 +66,10 @@ export const styles = {
       signUpLink: {
         color: primaryColor,
       },
+      errorText: { 
+        color: '#FF0000',
+        textAlign: 'left',
+        width: '100%',
+        marginBottom: 10,
+      } 
 };

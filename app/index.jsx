@@ -1,10 +1,9 @@
 
 import { NativeBaseProvider } from "native-base";
-
-import { Redirect } from "expo-router";
-import { Provider } from "react-redux";
-import store from "./processes/store/store";
-import LoginPage from "./pages/login/LoginPage";
+import PollsCreationStatistics from "./pages/polls-creation/PollsCreationStatistics";
+// import { Redirect } from "expo-router";
+// import { Provider } from "react-redux";
+// import store from "./processes/store/store";
 
 export default function Index() {
 
@@ -17,13 +16,12 @@ export default function Index() {
  <NativeBaseProvider>
 
 
-{/* 
-   <Provider store={store}>
+
+   {/* <Provider store={store}>
       <Redirect href={"/pages/getstarted/main"} />
       </Provider> */}
 
-      <LoginPage/>
-
+      <PollsCreationStatistics/>
 
     </NativeBaseProvider>
 

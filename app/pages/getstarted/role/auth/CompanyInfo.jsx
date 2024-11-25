@@ -51,9 +51,31 @@ const CompanyInfo = () => {
     
   }, []);
 
-  const onChangeField = useCallback((name) => (text) => {
-    setValue(name, text);
-  }, []);
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+  
+  const onChangeField = useCallback(
+    (name) => (text) => {
+      if (name === "phone") {
+        if (/^\d*$/.test(text)) {
+          setValue(name, text);
+        } else {
+          setMessage("Поле номер должно содержать только цифры");
+        }
+      } else if (name === "email") {
+        if (validateEmail(text)) {
+          setValue(name, text);
+        } else {
+          setMessage("Введите корректный email");
+        }
+      } else {
+        setValue(name, text);
+      }
+    },
+    []
+  );  
 
   useEffect(() => {
     register('mission');
