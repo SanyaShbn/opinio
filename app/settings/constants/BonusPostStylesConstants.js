@@ -13,7 +13,7 @@ export const styles = {
     variantTwoAndThreeBox: {
         bg: "white",
         borderRadius: "10px",
-        width: "190px",
+        width: "100%",
         height: "90px",
         maxWidth: "100%",
         padding: "6px",

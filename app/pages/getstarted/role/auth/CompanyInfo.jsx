@@ -55,7 +55,34 @@ const CompanyInfo = () => {
       router.navigate("pages/getstarted/role/auth/Category")
     }
 
-  }, []);
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+  
+  const onChangeField = useCallback(
+    (name) => (text) => {
+      if (name === "phone") {
+        if (/^\d*$/.test(text)) {
+          setValue(name, text);
+        } else {
+          setMessage("Поле номер должно содержать только цифры");
+        }
+      } else if (name === "email") {
+        if (validateEmail(text)) {
+          setValue(name, text);
+        } else {
+          setMessage("Введите корректный email");
+        }
+      } else {
+        setValue(name, text);
+      }
+    },
+    []
+  );  
+
+
+
 
   const onChangeField = useCallback(
     (name) => (text) => {

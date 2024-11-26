@@ -23,6 +23,9 @@ function Organization() {
   const [isRegistered, setIsRegistered] = useState(false);
   const [message, setMessage] = useState("");
   const dispatch = useDispatch();
+
+  const validateLatinSymbols = (text) => /^[a-zA-Z]+$/.test(text);
+
   const checkPassword = (formdata) => {
     if (formdata["password"] != formdata["password2"]) {
       setIsRegistered(false);
@@ -62,10 +65,19 @@ function Organization() {
 
   const onChangeField = useCallback(
     (name) => (text) => {
-      setValue(name, text);
+      if (name === "login" || name === "password") {
+        if (validateLatinSymbols(text)) {
+          setValue(name, text);
+        } else {
+          setValue(name, "");
+          setMessage(`${name === "login" ? "Логин" : "Пароль"} должен содержать только латинские буквы!`);
+        }
+      } else {
+        setValue(name, text);
+      }
     },
     []
-  );
+  );  
 
   useEffect(() => {
     register("login");
