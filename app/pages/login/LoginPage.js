@@ -4,13 +4,14 @@ import { Input } from 'native-base';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { styles } from '../../settings/constants/login-styles/LoginPageStyles';
 import logo from "../../settings/images/Logo.png"; 
+import { useRouter } from 'expo-router';
 
 export default function LoginPage() {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-
+const router = useRouter()
   const validateLogin = useCallback((login) => {
     const loginRegex = /^[a-zA-Z]+$/;
     if (!login) {
@@ -43,6 +44,7 @@ export default function LoginPage() {
 
     if (isLoginValid && isPasswordValid) {
       console.log({ login, password });
+      router.navigate("(tabs)/Home")
       // Логика авторизации
     }
   }, [login, password, validateLogin, validatePassword]);

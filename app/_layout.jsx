@@ -138,6 +138,7 @@ function RootLayout() {
 
   
         {createScreen("pages/home/(polls)/popular", "Популярное")}
+        {createScreen("pages/login/LoginPage", "Войти")}
         {createScreen("pages/home/(polls)/new", "Новинки")}
         {createScreen("pages/home/all", "Все")}
         {createScreen("pages/getstarted/role/Role", "Выбрать режим")}
