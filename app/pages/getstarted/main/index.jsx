@@ -39,7 +39,7 @@ function GetStarted() {
       <View style={getstarted.authWrapper}>
           <View style={getstarted.authWrapper}>
             <Text style={getstarted.authDesc}>Уже есть аккаунт?</Text>
-            <Link href={""}>
+            <Link href={"pages"}>
             <Text style={getstarted.authLink}>Войти</Text>
             </Link>
           
