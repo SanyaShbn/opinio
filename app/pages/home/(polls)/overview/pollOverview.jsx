@@ -5,48 +5,50 @@ import PollsCard from "../../../../widgets/Cards/PollsCard";
 import PollsCreationSettings from "../../../polls-creation/PollsCreationSettings";
 import { VirtualizedList } from "react-native";
 import { useLocalSearchParams } from "expo-router";
+import PollsCreationStatistics from "../../../polls-creation/PollsCreationStatistics";
 
 function PollOverview() {
-    const [state, setState] = useState(0);
-    const params = useLocalSearchParams()
+    // const [state, setState] = useState(0);
+    // const params = useLocalSearchParams()
 
-    const {pollId} = params
+    // const {pollId} = params
 
-    const handleGetContent = (number) => {
-        switch (number) {
-          case 0:
-            return (
-              <VStack style={{ gap: 6 }}>
+    // const handleGetContent = (number) => {
+    //     switch (number) {
+    //       case 0:
+    //         return (
+    //           <VStack style={{ gap: 6 }}>
                
-              </VStack>
-            );
+    //            <PollsCreationStatistics/>
+    //           </VStack>
+    //         );
     
-          case 1:
-            return (
-              <VStack style={{ gap: 6 }}>
+    //       case 1:
+    //         return (
+    //           <VStack style={{ gap: 6 }}>
                
-               <PollsCreationSettings pollId={pollId} />
+    //            <PollsCreationSettings pollId={pollId} />
                
-              </VStack>
-            );
-          case 2:
-          return (
-            <VStack style={{ gap: 6 }}>
+    //           </VStack>
+    //         );
+    //       case 2:
+    //       return (
+    //         <VStack style={{ gap: 6 }}>
               
-              
-            </VStack>
-          );
-        }
-      };
+            
+    //         </VStack>
+    //       );
+    //     }
+    //   };
     
-      const handleChange = (number) => {
-        setState(number);
-      };
+    //   const handleChange = (number) => {
+    //     setState(number);
+    //   };
 
     return ( 
     
         <VStack>
-        <Box my="14px">
+        {/* <Box my="14px">
           <TabsMenuThreeItems
             label1={"Статистика"}
             label2={"Настройки"}
@@ -54,10 +56,16 @@ function PollOverview() {
             handleChange={handleChange}
             initValue={state}
           />
-        </Box>
+        </Box> */}
+
+        <PollsCreationStatistics/>
   
         {/* <VirtualizedList style={{ height: 600, width: "100%" }} getItemCount={}> */}
-          <Center>{handleGetContent(state)}</Center>
+
+
+          {/* <Center>{handleGetContent(state)}</Center> */}
+
+
         {/* </VirtualizedList> */}
       </VStack>
     

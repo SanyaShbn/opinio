@@ -13,11 +13,11 @@ const PollsCreationStatistics = ({ pollId }) => {
     const fetchData = async () => {
       // Статические данные для диаграмм
       const data = {
-        1: 5,
+        1: 25,
         2: 10,
-        3: 8,
-        4: 15,
-        5: 3,
+        3: 38,
+        4: 20,
+        5: 7,
       };
       setPollData(data);
     };
@@ -36,9 +36,9 @@ const PollsCreationStatistics = ({ pollId }) => {
   };
 
   const pieChartData = Object.keys(pollData).map((key) => {
-    const percentage = ((pollData[key] / totalResponses) * 100).toFixed(0); // Округляем до целых чисел
+
     return {
-      name: `${percentage}% Вопрос ${key}`,
+      name: `Вопрос ${key}`,
       count: pollData[key],
       color: ["#FF6384", "#36A2EB", "#FFCE56", "#66BB6A", "#FF7043"][key % 5],
       legendFontColor: '#7F7F7F',
