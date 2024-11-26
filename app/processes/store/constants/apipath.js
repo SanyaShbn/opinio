@@ -35,7 +35,8 @@ const api={
         fetch:base.concat("/organization/"),
         delete:base.concat("/posts/"),
         comments:base.concat("/comments/")
-    }
+    },
+ 
    
 }
 

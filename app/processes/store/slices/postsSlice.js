@@ -27,6 +27,15 @@ const initialState = {
         
 
     ],
+    comments:[{
+         
+            id: 'ljfnvf', 
+            content: 'a;akmcksdmc',
+            createdAt: '18.10.2024',  
+            username: 'username'
+          
+          
+    }],
     status:'idle',
     error:null
 }
@@ -125,9 +134,15 @@ export function getPostsStatus(state){
     return state[DomainNames.posts].status
   }
 
-
+ 
   export function getPostsError(state){
     return state[DomainNames.posts].error
   }
+
+  export function  getPostComments(state){
+    return state[DomainNames.posts].comments
+  }
+
+
   export const { deletePost } = postsSlice.actions
   export default postsSlice.reducer

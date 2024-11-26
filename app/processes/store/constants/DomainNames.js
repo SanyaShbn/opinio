@@ -5,7 +5,9 @@ const DomainNames = {
     category:"category",
     subscriptions:"subscriptions",
     activity:"activity",
-    posts:"posts"
+    posts:"posts",
+    stat:"stat",
+    polls:"polls"
 
 
 }

@@ -5,35 +5,45 @@ import PollsCard from "../../../widgets/Cards/PollsCard";
 import { useState } from "react";
 import OrganizationCard from "../../../widgets/Cards/OrganizationCard";
 import { useRouter } from "expo-router";
+import { useSelector } from "react-redux";
+import { getUser } from "../../../processes/store/slices/postsSlice";
 function Category() {
   const [state, setState] = useState(0);
   const router = useRouter();
   const handleOrganizationClick=(id)=>{
    
-    router.setParams({ organization: id })
-    router.navigate("");
+    router.navigate({pathname:"pages/organization-view", params:{pollId:id}}  );
   }
 
   const handlePollClick=(id)=>{
-   
+    router.navigate({pathname:"pages/home/(polls)/overview/pollOverview", params:{pollId:id}}  );
   }
+
+  const organizationsList = useSelector(getUser).organizations
+
+
 
   const handleGetContent = (number) => {
     switch (number) {
       case 0:
         return (
           <VStack style={{ gap: 6 }}>
-            <PollsCard type="variant3" />
-            <PollsCard type="variant3" />
-            <PollsCard type="variant3" />
-            <PollsCard type="variant3" />
+            <PollsCard type="variant3" buttonClickHandler={handlePollClick}/>
+           
           </VStack>
         );
 
       case 1:
         return (
           <VStack style={{ gap: 6 }}>
-            <OrganizationCard type="variant2" topic="pkca" handleCardClick={handleOrganizationClick}/>
+
+            {
+              organizationsList.map((item,index)=>(
+                <OrganizationCard  type="variant2" topic="Медицина" text={"Название организации"} handleCardClick={handleOrganizationClick}/>
+              ))
+            }
+
+          
            
           </VStack>
         );

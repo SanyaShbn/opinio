@@ -150,6 +150,7 @@ function RootLayout() {
         {createScreen("pages/polls-creation/PollsCreationStatistics", "Статистика")}
         {createScreen("pages/home/(polls)/overview/pollOverview", "Обзор")}
         {createScreen("pages/home/(polls)/overview/constructor", "Конструктор")}
+        {createScreen("pages/organization-view/OrganizationPostsViewExpanded", "Обсуждение")}
         {createSearchBackScreen("pages/home/(polls)/orgPolls")}
         {createSearchBackScreen("pages/home/discussions/discussions")}
         <Stack.Screen
