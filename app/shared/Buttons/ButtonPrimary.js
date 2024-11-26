@@ -3,7 +3,7 @@ import { Text, Pressable, StyleSheet } from "react-native";
 import { secondaryColor } from "../../settings/constants/Colors";
 
 
-const ButtonPrimary = ({ text, type = "default", onPress={}}) => {
+const ButtonPrimary = ({ text, type = "default", onPress = () => {}}) => {
   const [isPressed, setIsPressed] = useState(false);
 
   const getType = (type, isPressed) => {

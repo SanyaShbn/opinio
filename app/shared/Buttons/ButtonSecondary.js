@@ -4,7 +4,7 @@ import { specificColor, primaryColor, mainColor } from "../../settings/constants
 import { Link } from "expo-router";
 
 
-const ButtonSecondary = ({ text, type = "default", onPress={} }) => {
+const ButtonSecondary = ({ text, type = "default", onPress = () => {} }) => {
   const [isPressed, setIsPressed] = useState(false);
 
   const getType = (type, isPressed) => {
@@ -19,6 +19,8 @@ const ButtonSecondary = ({ text, type = "default", onPress={} }) => {
         return isPressed ? [pollsCreationSettingsVariant.button, pollsCreationSettingsVariant.pressed] : [pollsCreationSettingsVariant.button];
       case "pollsCompletingVariant":
         return isPressed ? [pollsCompletingVariant.button, pollsCompletingVariant.pressed] : [pollsCompletingVariant.button];  
+      case "getStartedButton":
+         return isPressed ? [getStartedButton.button, getStartedButton.pressed] : [getStartedButton.button];  
       default:
         return isPressed ? [defaultStyles.button, defaultStyles.pressed] : [defaultStyles.button];
     }
@@ -36,6 +38,8 @@ const ButtonSecondary = ({ text, type = "default", onPress={} }) => {
         return pollsCreationSettingsVariant.text;  
       case "pollsCompletingVariant":
         return pollsCompletingVariant.text;  
+      case "getStartedButton":
+        return getStartedButton.text;  
       default:
         return defaultStyles.text;
     }
@@ -191,6 +195,23 @@ const pollsCompletingVariant = StyleSheet.create({
   text: {
     fontFamily: "Roboto",
     fontSize: 16,
+    color: "white",
+  },
+});
+
+const getStartedButton = StyleSheet.create({
+  ...defaultStyles,
+  button: {
+    backgroundColor: specificColor,
+    width: 224,
+    height: 53,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 4,
+  },
+  text: {
+    fontFamily: "Roboto",
+    fontSize: 18,
     color: "white",
   },
 });
