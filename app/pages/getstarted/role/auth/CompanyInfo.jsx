@@ -38,6 +38,7 @@ const CompanyInfo = () => {
 
   const { register, handleSubmit, setValue } = useForm();
   const [isRegistered, setIsRegistered] = useState(false);
+  const [message,setMessage] = useState("")
 
   const checkForm = (formdata) => {
     for (let key in formdata) {
@@ -54,6 +55,7 @@ const CompanyInfo = () => {
       dispatch(setUserdata({...formData}))
       router.navigate("pages/getstarted/role/auth/Category")
     }
+},[])
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -84,12 +86,12 @@ const CompanyInfo = () => {
 
 
 
-  const onChangeField = useCallback(
-    (name) => (text) => {
-      setValue(name, text);
-    },
-    []
-  );
+  // const onChangeField = useCallback(
+  //   (name) => (text) => {
+  //     setValue(name, text);
+  //   },
+  //   []
+  // );
 
   useEffect(() => {
     register("mission");
@@ -145,7 +147,7 @@ const CompanyInfo = () => {
               onChangeText={onChangeField("link")}
             />
           </Center>
-
+          <Text style={{ color: "#DC143C" }}>{message}</Text>
           <Center>
             <View style={{ marginTop: 30 }}></View>
 
@@ -160,6 +162,7 @@ const CompanyInfo = () => {
       </Center>
     </Box>
   );
-};
+}
+
 
 export default CompanyInfo;
