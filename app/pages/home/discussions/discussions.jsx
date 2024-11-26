@@ -5,9 +5,10 @@ import FilterBar from "../../../shared/FilterBar/FilterBar";
 import Post from './../../../widgets/Posts/Post';
 import ClosePollModal from "../../../widgets/modals/ClosePollModal";
 import { useState } from "react";
+import { useRouter } from "expo-router";
 
 function Discussions() {
-
+    const router = useRouter()
     const list = useSelector(getPosts)
     const dispatch = useDispatch();
     const [open,setOpen] = useState(false)
@@ -28,6 +29,10 @@ function Discussions() {
         setOpen(false)
     }
 
+    const handleShow=()=>{
+        router.navigate({pathname:"pages/home/(polls)/overview/pollOverview", params:{pollId:id}}  );
+    }
+
 
     return (
     
@@ -45,7 +50,7 @@ function Discussions() {
             {
                 list.map((item,index)=>(
                     <View key={index}  style={{marginBottom:15}} >
-                        <Post  type="variant2" item={item} handleDelete={handleDelete}  />
+                        <Post  type="variant2" item={item} handleDelete={handleDelete} handleCommentCLick={handleShow} />
                     </View>
                    
                 ))

@@ -3,7 +3,7 @@ import { Box, ScrollView } from "native-base";
 import { styles } from "../../settings/constants/organization-view-styles/OrganizationViewExpandedStyles";
 import Post from "../../widgets/Posts/Post";
 
-const OrganizationPostsViewExpanded = () => {
+const OrganizationPostsViewExpanded = ({post}) => {
 
   return (
     <Box>
