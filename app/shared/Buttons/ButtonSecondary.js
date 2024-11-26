@@ -59,7 +59,7 @@ const ButtonSecondary = ({ text, type = "default", onPress={} }) => {
       case "userProfileModalVariant":
         return  <Text style={getTextStyle(type)}>{text}</Text>
       case "getStartedButton":
-        return   <Link href={"/pages/getstarted/role/Role"}>
+        return   <Link href={"pages/getstarted/role/Role"}>
         <Text style={getTextStyle(type)}>{text}</Text>
      </Link>
       default:

@@ -147,6 +147,10 @@ function RootLayout() {
         {createScreen("pages/getstarted/role/auth/CompanyInfo", "О компании")}
         {createSearchBackScreen("pages/home/(polls)/category")}
         {createScreen("pages/home/(polls)/all", "Все")}
+        {createScreen("pages/home/(polls)/overview/pollOverview", "Обзор")}
+        {createScreen("pages/home/(polls)/overview/constructor", "Конструктор")}
+        {createSearchBackScreen("pages/home/(polls)/orgPolls")}
+        {createSearchBackScreen("pages/home/discussions/discussions")}
         <Stack.Screen
           name="pages/getstarted/main/index"
           options={{

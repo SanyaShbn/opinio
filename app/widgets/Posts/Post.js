@@ -7,7 +7,10 @@ import { primaryButtonColor, defaultGrey } from "../../settings/constants/Colors
 
 const Post = ({ logo = require("../../settings/images/organization-logo-icon.png"), title="Название организации", subtitle="10 дней назад",
   content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book", 
-  comments=10, type = "default" }) => {
+  comments=10, type = "default",item,
+  handleDelete
+
+}) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [variant, setVariant] = useState(type);
 
@@ -27,6 +30,7 @@ const Post = ({ logo = require("../../settings/images/organization-logo-icon.png
     });
   };
 
+
   return (
     <Box {...styles.box} height={variant === "variant3" ? "185px" : "114px"}>
       <Box {...styles.headerBox}>
@@ -37,13 +41,13 @@ const Post = ({ logo = require("../../settings/images/organization-logo-icon.png
             <Image source={logo} alt="Organization Logo" width="34px" height="34px" resizeMode="contain" />
           )}
           <VStack>
-            <Text {...styles.text}>{title}</Text>
-            <Text {...styles.subtitle}>{subtitle}</Text>
+            <Text {...styles.text}>{item.title}</Text>
+            <Text {...styles.subtitle}>{item.createdAt}</Text>
           </VStack>
           {type === "variant2" && (
             <Box flexDirection="row" justifyContent="flex-end" flex={1}>
               <Pressable>
-                <MaterialIcons name="delete" size={24} {...styles.deleteIcon} />
+                <MaterialIcons name="delete" size={24} {...styles.deleteIcon} onPress={()=>handleDelete(item.id)}/>
               </Pressable>
             </Box>
           )}
@@ -52,7 +56,7 @@ const Post = ({ logo = require("../../settings/images/organization-logo-icon.png
 
       <Box {...styles.contentBox} height={variant === "variant3" ? "114px" : "45px"}>
         <ScrollView contentContainerStyle={{ flexGrow: 1 }} horizontal={false} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
-          <Text {...styles.text}>{content}</Text>
+          <Text {...styles.text}>{item.content}</Text>
         </ScrollView>
       </Box>
 

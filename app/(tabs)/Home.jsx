@@ -10,18 +10,25 @@ import QuestionAnswer from '../features/QuestionAnswer/QuestionAnswer';
 import UserProfile from './../features/UserProfile/UserProfile';
 import Bonus from '../shared/Bonus/Bonus';
 import { Box, HStack, ScrollView } from 'native-base';
+import { useSelector } from 'react-redux';
+import { getUser, getUserType } from '../processes/store/slices/userSlice';
+import statusTypes from '../processes/store/constants/statusTypes';
 
 function Home() {
 
+    const role = useSelector(getUserType)
+
+    const user = useSelector(getUser)
+ 
     return ( 
 
         <View>
-            <UserProfile/>
+            <UserProfile type={"default"} role={role} userName={user.name} />
             
                 <SliderHeader title={"Опросы"} pathTo={"pages/home/(polls)/all"}/>
 
 
-            <Menu/>
+            <Menu role={role} />
 
             <SliderHeader title={"Мои награды"} pathTo={"pages/home/bonuses"}/>
            <ScrollView horizontal >

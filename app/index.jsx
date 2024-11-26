@@ -17,11 +17,11 @@ export default function Index() {
  <NativeBaseProvider>
 
 
-{/* 
+
    <Provider store={store}>
       <Redirect href={"/pages/getstarted/main"} />
-      </Provider> */}
-      <OrganizationPostsViewExpanded/>
+      </Provider>
+    
 
 
     </NativeBaseProvider>
