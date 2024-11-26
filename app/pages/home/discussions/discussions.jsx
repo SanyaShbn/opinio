@@ -45,7 +45,7 @@ function Discussions() {
             {
                 list.map((item,index)=>(
                     <View key={index}  style={{marginBottom:15}} >
- <Post  type="variant2" item={item} handleDelete={handleDelete}/>
+                        <Post  type="variant2" item={item} handleDelete={handleDelete}  />
                     </View>
                    
                 ))

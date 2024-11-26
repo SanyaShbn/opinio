@@ -62,7 +62,7 @@ const Post = ({ logo = require("../../settings/images/organization-logo-icon.png
 
       <Box {...styles.commentsBox}>
         <Box {...styles.innerCommentsBox}>
-          <Text {...styles.commentText}>{comments}</Text>
+          <Text {...styles.commentText}>{item.commentCount}</Text>
           <MaterialCommunityIcons name="comment-text" size={21} color={defaultGrey} />
         </Box>
         <Pressable onPress={handleToggle}>
