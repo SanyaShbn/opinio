@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Text, Pressable } from "native-base";
+import { Box, Text, Pressable, Center } from "native-base";
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { styles } from "../../settings/constants/ClosePollModalStylesConstants";
 import { defaultGrey } from "../../settings/constants/Colors";
@@ -11,6 +11,10 @@ const ClosePollModal = ( {messageText, isOpen, onConfirm, onCancel} ) => {
   if (!isOpen) return null;
 
   return (
+    <>
+    
+    <Box  style={styles.shadow}> </Box>
+    <Center>
     <Box style={styles.container}>
       <Box style={styles.topContainer}>
         <Box style={styles.leftContainer}>
@@ -34,6 +38,14 @@ const ClosePollModal = ( {messageText, isOpen, onConfirm, onCancel} ) => {
         <ButtonPrimary text="Нет" type="closePollModalVariant" onPress={onCancel}/>
       </Box>
     </Box>
+    </Center>
+
+    
+    </>
+    
+
+   
+   
   );
 };
 

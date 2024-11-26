@@ -7,7 +7,11 @@ import Bonus from "../../shared/Bonus/Bonus";
 
 
 const PollsCard = ({ logo = require('../../settings/images/organization-logo-icon.png'), type = "default",
-   topic="Медицина", text="Заголовок опроса", date="28.10.2024", votesNumb=100, questionsNumb=10, orgName="Название организации", onBonusPress }) => {
+   topic="Медицина", text="Заголовок опроса", date="28.10.2024", votesNumb=100, questionsNumb=10, orgName="Название организации", onBonusPress,
+  
+   buttonText="Пройти",buttonClickHandler, id
+
+  }) => {
 
   const [isSourceLoaded, setIsSourceLoaded] = useState(false)
   const [isLogoLoaded, setIsLogoLoaded] = useState(false)
@@ -32,6 +36,9 @@ const PollsCard = ({ logo = require('../../settings/images/organization-logo-ico
     }
   };
 
+  // const handleOpenPoll=()=>{
+  //   buttonClickHandler()
+  // }
   return (
     <Box {...styles.box} height={type === "variant2" ? "114px" : "178px"} 
     width={getWidth()}>
@@ -82,6 +89,9 @@ const PollsCard = ({ logo = require('../../settings/images/organization-logo-ico
       <Box {...styles.middleBox}>
         <VStack>
           <HStack justifyContent="space-between" alignItems="center" width="100%">
+
+              
+
             <StyledCardsTopic>{topic}</StyledCardsTopic>
             <Bonus onPress={onBonusPress}/>
           </HStack>
@@ -103,7 +113,7 @@ const PollsCard = ({ logo = require('../../settings/images/organization-logo-ico
               {votesNumb} голосов
             </Text>
           )}
-          <ButtonPrimary text="Пройти" type="pollsCardVariant" />
+          <ButtonPrimary text={buttonText} type="pollsCardVariant" onPress={()=>buttonClickHandler(id)}/>
         </HStack>
       </Box>
     </Box>

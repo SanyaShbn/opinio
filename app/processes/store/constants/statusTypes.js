@@ -4,8 +4,8 @@ const statusTypes = {
     loading:'loading',
     failed:'failed',
     idle:'idle',
-    user:"user",
-    org:"org"
+    user:"USER",
+    org:"ORGANIZATION"
 }
 
 export default statusTypes;

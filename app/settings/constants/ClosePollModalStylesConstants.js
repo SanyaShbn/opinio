@@ -1,9 +1,22 @@
+
+
 export const styles = {
+ shadow:{
+    position:'absolute',
+    top:0,
+    left:0,
+    width:'120%',
+    height:'100%',
+    zIndex:1,
+    backgroundColor:"rgba(118, 118, 118, 0.5)",
+  
+ },
   container: {
     width: 362,
     height: 214,
     backgroundColor: "white",
     borderRadius: 10,
+    zIndex:9999,
   },
   topContainer: {
     width: "100%",

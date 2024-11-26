@@ -5,7 +5,7 @@ import TabsMenuThreeItems from "../../shared/Tabs/TabsMenuThreeItems";
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import QuestionAnswer from "../../features/QuestionAnswer/QuestionAnswer";
 import ButtonPrimary from "../../shared/Buttons/ButtonPrimary";
-import ButtonSecondary from "../../shared/Buttons/ButtonSecondary";
+// import ButtonSecondary from "../../shared/Buttons/ButtonSecondary";
 
 const PollsCreationSettings = ({ initialPollsName = "", initialTotalNumber = 1 }) => {
   const [polls, setPolls] = useState([{ pollName: initialPollsName, questions: [{ questionName: "", answers: [] }] }]);
@@ -101,9 +101,9 @@ const PollsCreationSettings = ({ initialPollsName = "", initialTotalNumber = 1 }
 
   return (
     <Box style={styles.container}>
-      <Box style={styles.tabsContainer}>
+      {/* <Box style={styles.tabsContainer}>
         <TabsMenuThreeItems label1={"Статистика"} label2={"Настройки"} label3={"Аудитория"} />
-      </Box>
+      </Box> */}
       <Box style={styles.contentContainer}>
         <Box style={styles.contentContainer1}>
           <Box style={{ width: 200, height: 30, justifyContent:"center" }}>
@@ -131,7 +131,7 @@ const PollsCreationSettings = ({ initialPollsName = "", initialTotalNumber = 1 }
         />
           <Box style={styles.contentContainer3}>
             <ButtonPrimary text={"Добавить вопрос +"} onPress={addPoll} type="pollsCreationSettingsVariant"/>
-            <ButtonSecondary text={"Сохранить"} type="pollsCreationSettingsVariant" onPress={() => console.log("Button is pressed...")}/>
+            {/* <ButtonSecondary text={"Сохранить"} type="pollsCreationSettingsVariant" onPress={() => console.log("Button is pressed...")}/> */}
           </Box>
       </Box>
     </Box>

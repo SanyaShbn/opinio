@@ -4,9 +4,10 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { styles } from "../../settings/constants/UserProfileStylesConstants";
 import { defaultGrey } from "../../settings/constants/Colors";
 import ButtonSecondary from "../../shared/Buttons/ButtonSecondary";
+import statusTypes from "../../processes/store/constants/statusTypes";
 
 const UserProfile = ({ userName = "Пользователь", userLogin = "Логин пользователя", userOccupation = "Род деятельности",
-   type = "default", onPress={...console.log("Button is pressed...")} }) => {
+   type = "default", onPress={...console.log("Button is pressed...")}, role }) => {
   return (
     <Box style={styles.container}>
       <Box style={styles.avatarContainer}>
@@ -14,7 +15,8 @@ const UserProfile = ({ userName = "Пользователь", userLogin = "Ло�
       </Box>
       {type === "default" ? (
         <Box style={styles.textContainer}>
-          <Text style={styles.userNameText}>Здравствуйте, {userName}</Text>
+          <Text style={styles.userNameText}> {role==statusTypes.user ? "Здравствуйте" : "Добро пожаловать"}</Text>
+          <Text>{userName}</Text>
         </Box>
       ) : (
         <Box style={styles.textContainerVariant2}>

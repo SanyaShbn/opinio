@@ -25,6 +25,15 @@ const api={
     activity:{
         url:base.concat(""),
         fetch:"/",
+    },
+    org:{
+        url:base.concat("organizations"),
+        fetch:base.concat("/"),
+    },
+    posts:{
+        url:base.concat("posts"),
+        fetch:base.concat("/organization/"),
+        delete:base.concat("/posts/")
     }
    
 }

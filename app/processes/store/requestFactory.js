@@ -38,8 +38,23 @@ class ApiRequestCreator{
     
     }
     
-    createDeleteRequest(){
-    
+    createDeleteRequest(uri, withParms=false){
+      let fullUrl = this.url.concat(uri)
+
+      if(withParms){
+
+            return  createAsyncThunk(this.domainName.concat(uri)  , async (initial) => {
+              const response = await axios.get(fullUrl.concat(addParams(initialUser.data)),  initial);
+                return response.data
+          })
+
+      }else{
+          return  createAsyncThunk(this.domainName.concat(uri)  , async (initial) => {
+              const response = await axios.get(fullUrl,  initial);
+                return response.data
+          })
+      }
+
     }
 
     

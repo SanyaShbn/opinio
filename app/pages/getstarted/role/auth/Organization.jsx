@@ -47,7 +47,7 @@ function Organization() {
       setMessage("");
       return true;
     }
-    return false;
+    return true;
   };
 
   const onSubmit = useCallback((formData) => {

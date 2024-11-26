@@ -5,26 +5,33 @@ import { role } from "./../role";
 import { useState } from "react";
 import { styles } from "../../../../settings/constants/polls-creation-styles/PollsCreationAudienceStyles";
 import { secondaryColor } from "../../../../settings/constants/Colors";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getCategories } from "../../../../processes/store/slices/categorySlice";
+import { setUserdata } from "../../../../processes/store/slices/userSlice";
 
 function Category() {
   const router = useRouter();
   const [selected, setSelected] = useState([]);
   const handleCheckboxChange = (values) => {
     setSelected(values);
-  };
 
-  const list  = useSelector(getCategories)
+  };
   
+  const dispatch = useDispatch()  
+  const handleSave=()=>{
+    
+    dispatch(setUserdata({categories:selected}))
+
+    router.replace("(tabs)/Home");
+  }
+
+  const list = useSelector(getCategories)
 
   return (
     <Box width={"100%"}>
       <Center>
-        <Box maxW="80%" style={{ width: "100%", gap: 10 }} pt={30}>
-          <Text style={{ fontSize: 20, marginBottom: 10 }}>
-            Создание аккаунта
-          </Text>
+        <Box maxW="80%" style={{ width: "100%", gap: 10 }}>
+      
           <Box style={styles.contentContainer}>
             <VStack space={2}>
               <HStack alignItems="baseline">
@@ -55,9 +62,7 @@ function Category() {
             {selected.length > 0 ? (
               <Pressable
                 style={role.button}
-                onPress={() => {
-                  router.replace("(tabs)/Home");
-                }}
+                onPress={handleSave}
               >
                 <Text style={role.buttonText}>Сохранить</Text>
               </Pressable>

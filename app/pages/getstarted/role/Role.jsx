@@ -15,7 +15,11 @@ function Role() {
  const dispatch = useDispatch()
 
  const handleType=(type)=>{
-      dispatch(controlType(type))
+  dispatch(controlType(type))
+    if(type==statusTypes.user){
+      router.navigate("pages/getstarted/role/auth/Citizen")
+    }
+    router.navigate("pages/getstarted/role/auth/Organization")
  }
 
   return (
