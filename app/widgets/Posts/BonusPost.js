@@ -5,7 +5,7 @@ import Bonus from "../../shared/Bonus/Bonus";
 import ButtonPrimary from "./../../shared/Buttons/ButtonPrimary";
 import ButtonSecondary from "./../../shared/Buttons/ButtonSecondary";
 
-const BonusPost = ({ id, bonusName = "Название награды", orgName = "Название организации", type = "default", onTypeChange, onBonusPress }) => {
+const BonusPost = ({ id, bonusName = "Название награды", orgName = "Название организации", type = "default", onTypeChange=()=>{}, onBonusPress }) => {
   const [currentType, setCurrentType] = useState(type);
 
   useEffect(() => {

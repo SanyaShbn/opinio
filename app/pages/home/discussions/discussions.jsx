@@ -29,8 +29,9 @@ function Discussions() {
         setOpen(false)
     }
 
-    const handleShow=()=>{
-        router.navigate({pathname:"pages/home/(polls)/overview/pollOverview", params:{pollId:id}}  );
+    const handleShow=(item)=>{
+     
+        router.navigate({pathname:"pages/organization-view/OrganizationPostsViewExpanded", params:{...item}});
     }
 
 

@@ -7,8 +7,8 @@ import { primaryButtonColor, defaultGrey } from "../../settings/constants/Colors
 
 const Post = ({ logo = require("../../settings/images/organization-logo-icon.png"), title="Название организации", subtitle="10 дней назад",
   content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book", 
-  comments=10, type = "default",item,
-  handleDelete
+  comments=10, type = "default",item, 
+  handleDelete,handleCommentCLick
 
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -61,10 +61,12 @@ const Post = ({ logo = require("../../settings/images/organization-logo-icon.png
       </Box>
 
       <Box {...styles.commentsBox}>
-        <Box {...styles.innerCommentsBox}>
+      <Pressable onPress={()=>handleCommentCLick(item)}>
+        <Box {...styles.innerCommentsBox}  >
           <Text {...styles.commentText}>{item.commentCount}</Text>
           <MaterialCommunityIcons name="comment-text" size={21} color={defaultGrey} />
         </Box>
+        </Pressable>
         <Pressable onPress={handleToggle}>
           <Text {...styles.text} lineHeight="14.52px" color={primaryButtonColor}>
             {variant === "variant3" ? "Скрыть" : "Подробнее"}

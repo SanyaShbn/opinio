@@ -45,6 +45,10 @@ const initialState = {
     export const deletePosts = apiFactory.createDeleteRequest(api.posts.delete, true)
     //----------------------
 
+    //---fetch user---
+    export const fetchPostComments = apiFactory.createGetRequest(api.posts.comments, true)
+    //----------------------
+
    
 
 

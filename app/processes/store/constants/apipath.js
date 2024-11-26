@@ -33,7 +33,8 @@ const api={
     posts:{
         url:base.concat("posts"),
         fetch:base.concat("/organization/"),
-        delete:base.concat("/posts/")
+        delete:base.concat("/posts/"),
+        comments:base.concat("/comments/")
     }
    
 }
