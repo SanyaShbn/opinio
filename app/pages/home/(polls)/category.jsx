@@ -39,7 +39,7 @@ function Category() {
 
             {
               organizationsList.map((item,index)=>(
-                <OrganizationCard  type="variant2" topic="Медицина" text={"Название организации"} handleCardClick={handleOrganizationClick}/>
+                <OrganizationCard key={index} item={item} type="variant2" topic="Медицина" text={"Название организации"} handleCardClick={handleOrganizationClick}/>
               ))
             }
 

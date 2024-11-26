@@ -6,7 +6,7 @@ import { StyledCardsDescription, StyledCardsText, StyledCardsTopic } from './../
 import ButtonPrimary from "../../shared/Buttons/ButtonPrimary";
 import ButtonSecondary from "../../shared/Buttons/ButtonSecondary";
 
-const OrganizationCard = ({ type = "default", topic, text, description = "Описание", surveysNumb, topicsNumb,handleCardClick, data }) => {
+const OrganizationCard = ({ type = "default", topic, text, description = "Описание", surveysNumb, topicsNumb,handleCardClick }) => {
   let width = 225;
   let height = 125;
 
